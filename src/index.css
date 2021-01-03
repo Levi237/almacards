@@ -11,3 +11,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* ON/OFF SWITCH */
+#email.active {
+  max-width: 100vw;
+}
+#menu.active {
+  max-width: 40vw;
+}
+.active {
+  max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  transition: .8s ease-in-out;
+}
+
+#email.inactive{
+  max-height: 0px;
+}
+#menu.inactive {
+  max-height: 100vh;
+  font-size: 1px;
+  color: transparent!important;
+}
+.inactive {
+  max-width: 0;
+  transition: .8s ease-in-out;
+  transition-delay: .3s !important;
+}
+
+@media screen and (max-width: 945px){
+  #menu.active, #email.active {
+    max-width: 100vw;
+  }
+  .active {
+    max-width: 100vw;
+  }
+}
+
+.nav-active {
+  color:#29bfff !important;
+}
+
+/* Email Form */
+button.selectedHighlighted {
+  background-color: rgba(41, 191, 255, .3)!important;
+  /* color: #fff; */
+}
+/* Background Phase */
+@keyframes slideleft {
+  0% { background-position: 0%; }
+  50% { background-position: 100%; }
+  100% { background-position: 0%; }
+}
+
+.titleDecoration {
+    font-family: 'Big Shoulders Stencil Text';
+    font-size: 48px;
+    letter-spacing: 4px;
+}
