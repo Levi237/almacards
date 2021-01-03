@@ -9,6 +9,8 @@ import NavHamburger from './components/nav/NavHamburger';
 import EmailConfirmation from './components/contact/EmailConfirmation';
 import EmailSignup from './components/contact/EmailSignup';
 
+import HomePage from './components/home';
+
 export default class App extends Component {
   state = {
     emailContact: "",
@@ -62,26 +64,20 @@ export default class App extends Component {
     const { emailContact, pageStyle } = this.state
     return (
       <AppContainer>
-                <NavMenu toggleMenu={this.toggleMenu}/>
+        <NavMenu toggleMenu={this.toggleMenu}/>
         <EmailSignup contactType={emailContact} toggleEmailSignup={this.toggleEmailSignup}/>
         <Switch>         
-            <Route path={routes.HOME} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.home}/> }/>
-            <Route path={routes.PORT} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.portfolio}/> }/>
-            <Route path={routes.INFO} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.about}/> }/>
-            <Route path={routes.MAIL} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.mail}/> }/>
-            <Route path={routes.ROOT} render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.root}/> }/>
-          </Switch>
+          <Route path={routes.HOME} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.home}/> }/>
+          <Route path={routes.PORT} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.portfolio}/> }/>
+          <Route path={routes.INFO} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.about}/> }/>
+          <Route path={routes.MAIL} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.mail}/> }/>
+          <Route path={routes.ROOT} render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.root}/> }/>
+        </Switch>
         <Switch>
           <Route path={routes.CNFM} exact render={() => <EmailConfirmation/> }/>     
           <Route path={routes.HOME} exact render={() => <></>}/>
           <Route path={routes.PORT} exact render={() => <></>}/>
-          <Route path={routes.ROOT} render={() => <>
-            <div>
-              <h1>❤️ Hello Alma ❤️</h1>
-              <iframe src="https://giphy.com/embed/XvZ8PJ4DSqzSM" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen />
-              <h1> </h1>
-            </div>
-          </>}/>
+          <Route path={routes.ROOT} render={() => <HomePage/>}/>
         </Switch>
 
       </AppContainer>
@@ -90,15 +86,5 @@ export default class App extends Component {
 }
 
 const AppContainer = styled.div`
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // width: 100vw;
-  // height: 100vh;
-  // h1 {
-  //   text-align: center;
-  // }
-  // div {
-  //   display: inline-block;
-  // }
+
 `;
