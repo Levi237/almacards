@@ -8,7 +8,7 @@ export default class HomePage extends Component {
             <LocalWrapper>
                 <section>
                     <h1>❤️ Hello Alma ❤️</h1>
-                    <iframe src="https://giphy.com/embed/XvZ8PJ4DSqzSM" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen />
+                    <iframe src="https://giphy.com/embed/XvZ8PJ4DSqzSM" frameBorder="0" class="giphy-embed" allowFullScreen />
                     <h1> </h1>
                 </section>
             </LocalWrapper>
@@ -25,5 +25,8 @@ const LocalWrapper = styled.div`
     text-align: center;
     section {
         display: inline-block;
+    }
+    iframe {
+        width: 100%;
     }
 `;
