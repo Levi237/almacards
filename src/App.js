@@ -15,7 +15,7 @@ export default class App extends Component {
     pageStyle: {
       home: {
         title: "",
-        color: "#fff",
+        color: "#4CBB9D",
         logoColor: "invert(0)",
         displayLogo: "none",
       },
@@ -39,7 +39,7 @@ export default class App extends Component {
       },
       root: {
         title: "",
-        color: "#fff",
+        color: "#4CBB9D",
         logoColor: "invert(0)",
         displayLogo: "none",
       }
@@ -75,28 +75,30 @@ export default class App extends Component {
           <Route path={routes.CNFM} exact render={() => <EmailConfirmation/> }/>     
           <Route path={routes.HOME} exact render={() => <></>}/>
           <Route path={routes.PORT} exact render={() => <></>}/>
-          <Route path={routes.ROOT} render={() => <></>}/>
+          <Route path={routes.ROOT} render={() => <>
+            <div>
+              <h1>❤️ Hello Alma ❤️</h1>
+              <iframe src="https://giphy.com/embed/XvZ8PJ4DSqzSM" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen />
+              <h1> </h1>
+            </div>
+          </>}/>
         </Switch>
-        <div>
-          <h1>❤️ Hello Alma ❤️</h1>
-          <iframe src="https://giphy.com/embed/XvZ8PJ4DSqzSM" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen />
-          <h1> </h1>
-        </div>
+
       </AppContainer>
     );
   }
 }
 
 const AppContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  h1 {
-    text-align: center;
-  }
-  div {
-    display: inline-block;
-  }
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // width: 100vw;
+  // height: 100vh;
+  // h1 {
+  //   text-align: center;
+  // }
+  // div {
+  //   display: inline-block;
+  // }
 `;
