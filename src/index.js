@@ -7,10 +7,10 @@ import 'firebase/firestore';
 import 'firebase/firebase-storage';
 
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App                          from './App';
+import reportWebVitals              from './reportWebVitals';
 
-import dotenv from 'dotenv';
+import dotenv                       from 'dotenv';
 dotenv.config();
 
 firebase.initializeApp({
