@@ -15,7 +15,7 @@ export default class NavMenu extends Component {
                     <NavLink activeClassName="nav-active" to={routes.HOME} onClick={() => {toggleMenu()}}>HOME</NavLink>
                     <NavLink activeClassName="nav-active" to={routes.PORT} onClick={() => {toggleMenu()}}>PORTFOLIO</NavLink>
                     <NavLink activeClassName="nav-active" to={routes.INFO} onClick={() => {toggleMenu()}}>ABOUT</NavLink>
-                    <NavLink activeClassName="nav-active" to={routes.MAIL} onClick={() => {toggleMenu()}}>CONTACT</NavLink>
+                    <NavLink activeClassName="nav-active" to={routes.CONT} onClick={() => {toggleMenu()}}>CONTACT</NavLink>
                 </div>
             </NavContainer>
         );

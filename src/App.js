@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Switch, Route }    from 'react-router-dom';
 import styled               from 'styled-components';
+import { Switch, Route }    from 'react-router-dom';
 import * as routes          from './constants/routes';
 
 import NavMenu from './components/nav/NavMenu';
@@ -70,11 +70,11 @@ export default class App extends Component {
           <Route path={routes.HOME} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.home}/> }/>
           <Route path={routes.PORT} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.portfolio}/> }/>
           <Route path={routes.INFO} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.about}/> }/>
-          <Route path={routes.MAIL} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.mail}/> }/>
+          <Route path={routes.CONT} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.mail}/> }/>
           <Route path={routes.ROOT} render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.root}/> }/>
         </Switch>
         <Switch>
-          <Route path={routes.CNFM} exact render={() => <EmailConfirmation/> }/>     
+          <Route path={routes.CONF} exact render={() => <EmailConfirmation/> }/>     
           <Route path={routes.HOME} exact render={() => <></>}/>
           <Route path={routes.PORT} exact render={() => <></>}/>
           <Route path={routes.ROOT} render={() => <HomePage/>}/>
