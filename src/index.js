@@ -4,7 +4,7 @@ import { BrowserRouter as Router }  from 'react-router-dom';
 
 import firebase                     from 'firebase';
 import 'firebase/firestore';
-import 'firebase/firebase-storage'
+import 'firebase/firebase-storage';
 
 import './index.css';
 import App from './App';
