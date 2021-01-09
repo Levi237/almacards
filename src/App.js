@@ -17,31 +17,31 @@ export default class App extends Component {
     pageStyle: {
       home: {
         title: "",
-        color: "#4CBB9D",
+        color: "#312D02",
         logoColor: "invert(0)",
         displayLogo: "none",
       },
       about: {
         title: "",
-        color: "#181717",
+        color: "#312D02",
         logoColor: "invert(0)",
         displayLogo: "none",
       },
       portfolio: {
         title: "portfolio",
-        color: "#fff",
+        color: "#312D02",
         logoColor: "invert(0)",
         displayLogo: "inline-block",
       },
       mail: {
         title: "contact",
-        color: "#181717",
+        color: "#312D02",
         logoColor: "invert(1)",
         displayLogo: "inline-block",
       },
       root: {
         title: "",
-        color: "#4CBB9D",
+        color: "#312D02",
         logoColor: "invert(0)",
         displayLogo: "none",
       }

@@ -30,7 +30,7 @@ const NavContainer = styled.div`
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: rgba(19,17,17,.9);
+    background-color: #312D02;
     color: #FFF;
     position: fixed;
     a {
@@ -38,10 +38,10 @@ const NavContainer = styled.div`
         display: block;
         height: 44px;
         padding-top: 20px;
-        color: #FFF;
+        color: #45A788;
     }
     a:hover {
-        color: #29bfff;
+        color: #FCFF6C;
     }
     div {
         padding-top: 140px;

@@ -10,6 +10,7 @@ export default class HomePage extends Component {
                     <h1>❤️ Hello Alma ❤️</h1>
                     <iframe src="https://giphy.com/embed/XvZ8PJ4DSqzSM" frameBorder="0" class="giphy-embed" allowFullScreen />
                     <h1> </h1>
+                    
                 </section>
             </LocalWrapper>
         </>);
