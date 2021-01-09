@@ -11,7 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+h1, h2, h3, h4, p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  line-height: 100%;
+}
 /* ON/OFF SWITCH */
 #email.active {
   max-width: 100vw;

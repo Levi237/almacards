@@ -19,13 +19,13 @@ export default class App extends Component {
         title: "",
         color: "#312D02",
         logoColor: "invert(0)",
-        displayLogo: "none",
+        displayLogo: "inline-block;",
       },
       about: {
         title: "",
         color: "#312D02",
         logoColor: "invert(0)",
-        displayLogo: "none",
+        displayLogo: "inline-block;",
       },
       portfolio: {
         title: "portfolio",
@@ -43,7 +43,7 @@ export default class App extends Component {
         title: "",
         color: "#312D02",
         logoColor: "invert(0)",
-        displayLogo: "none",
+        displayLogo: "inline-block;",
       }
     }
   }

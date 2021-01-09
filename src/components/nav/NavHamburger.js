@@ -3,7 +3,8 @@ import styled      from 'styled-components';
 
 const NavHamburger = ({ toggleMenu, pageStyle }) => {
   return(<>
-    <Logo src="../logo.png" style={{display: pageStyle.displayLogo, filter: pageStyle.logoColor}}/>
+    <Logo src="ALMA.png" style={{display: pageStyle.displayLogo, filter: pageStyle.logoColor}}/>
+    <Title>ALMA CARDENAS</Title>
     <Hamburger name="toggleMenu" onClick={(e) => toggleMenu(e)}>
       <section style={{backgroundColor: pageStyle.color}}/>
       <section style={{backgroundColor: pageStyle.color}}/>
@@ -15,34 +16,37 @@ const NavHamburger = ({ toggleMenu, pageStyle }) => {
 const Logo = styled.img`
   position: absolute;
   z-index:999;
-  left:0;
+  right:0;
 
   width: 36px;
-  margin: 5vw 0 0 5vw;
+  margin: 5vw;
 `;
 const Title = styled.h1`
   position: absolute;
   z-index:991;
-width: 100vw!important;
-text-align:center;
-  color: white;
-text-transform: uppercase;
+  width: 100vw!important;
+  text-align:center;
+  color: FCFF6C;
+  text-transform: uppercase;
   width: 36px;
-  margin: 60px auto!important;
+  margin: 5vw auto!important;
+  font-size: 36px
 `;
 const Hamburger = styled.div`
+  display: none;
   position: absolute;
   z-index: 999;
   right: 0;
 
-  margin: 5vw 5vw 0 0;
+  margin: 5vw;
 
   section {
     margin: 6px 0;
     width: 35px;
     height: 4px;
   }
-  @media screen and (max-width: 945px) {
+  @media screen and (max-width: 540zpx) {
+    display: inline-block;
   }
 `;
 
