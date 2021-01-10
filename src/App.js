@@ -66,25 +66,36 @@ export default class App extends Component {
       <AppContainer>
         <NavMenu toggleMenu={this.toggleMenu}/>
         <EmailSignup contactType={emailContact} toggleEmailSignup={this.toggleEmailSignup}/>
-        <Switch>         
-          <Route path={routes.HOME} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.home}/> }/>
-          <Route path={routes.PORT} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.portfolio}/> }/>
-          <Route path={routes.INFO} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.about}/> }/>
-          <Route path={routes.CONT} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.mail}/> }/>
-          <Route path={routes.ROOT} render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.root}/> }/>
-        </Switch>
-        <Switch>
-          <Route path={routes.CONF} exact render={() => <EmailConfirmation/> }/>     
-          <Route path={routes.HOME} exact render={() => <></>}/>
-          <Route path={routes.PORT} exact render={() => <></>}/>
-          <Route path={routes.ROOT} render={() => <HomePage/>}/>
-        </Switch>
+        <div className="header">
+          <Switch>         
+            <Route path={routes.HOME} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.home}/> }/>
+            <Route path={routes.PORT} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.portfolio}/> }/>
+            <Route path={routes.INFO} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.about}/> }/>
+            <Route path={routes.CONT} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.mail}/> }/>
+            <Route path={routes.ROOT} render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.root}/> }/>
+          </Switch>
+        </div>
+        <div className="body">
+          <Switch>
+            <Route path={routes.CONF} exact render={() => <EmailConfirmation/> }/>     
+            <Route path={routes.INFO} exact render={() => <h1>About Stuff</h1> }/>
+            <Route path={routes.PORT} exact render={() => <h1>Portfolio</h1> }/>
+            <Route path={routes.ROOT} render={() => <HomePage/> }/>
+          </Switch>
+        </div>
+        <div className="footer">
 
+        </div>
       </AppContainer>
     );
   }
 }
 
 const AppContainer = styled.div`
-
+  display: grid;
+  grid-template-areas: 
+    ' header '
+    ' body '
+    ' footer ';
+  > 
 `;
