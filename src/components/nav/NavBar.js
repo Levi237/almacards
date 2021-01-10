@@ -71,8 +71,8 @@ const Title = styled.h1`
   text-align:center;
   color: #312D02;
   text-transform: uppercase;
-  margin: 40px auto!important;
-  font-size: 36px;
+  margin: 10px auto!important;
+  font-size: 64px;
   @media screen and (max-width: 540px) {
     margin: 5vw auto!important;
     font-size: 10vw;
