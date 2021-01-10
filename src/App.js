@@ -79,7 +79,7 @@ export default class App extends Component {
           </Switch>
         </div>
         <div className="footer">
-FOOTER HERE
+          FOOTER HERE
         </div>
       </AppContainer>
     );
