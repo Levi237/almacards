@@ -32,7 +32,7 @@ const LocalWrapper = styled.div`
     height: 100%;
     overflow: hidden;
     color: #FFF;
-    position: fixed;
+    // position: fixed;
     a {
         letter-spacing: 1px;
         color: #312D02;
