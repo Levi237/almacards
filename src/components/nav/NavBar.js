@@ -43,7 +43,7 @@ const LocalWrapper = styled.div`
         color: #FCFF6C;
     }
     div {
-        padding-top: 100px;
+        padding-top: 85px;
         padding-right: 5vw;
     }
     button {
