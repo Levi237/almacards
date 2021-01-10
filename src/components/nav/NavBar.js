@@ -13,9 +13,9 @@ export default class NavBar extends Component {
             <LocalWrapper id="bar" className="active">
                 <div>
                     {/* <NavLink activeClassName="nav-active" to={routes.HOME} onClick={() => {toggleMenu()}}>HOME</NavLink> */}
-                    <NavLink activeClassName="navbar-active" to={routes.PORT} onClick={() => {toggleMenu()}}>PORTFOLIO</NavLink>
-                    <NavLink activeClassName="navbar-active" to={routes.INFO} onClick={() => {toggleMenu()}}>ABOUT</NavLink>
-                    <NavLink activeClassName="navbar-active" to={routes.CONT} onClick={() => {toggleMenu()}}>CONTACT</NavLink>
+                    <NavLink activeClassName="navbar-active" to={routes.PORT}>PORTFOLIO</NavLink>
+                    <NavLink activeClassName="navbar-active" to={routes.INFO}>ABOUT</NavLink>
+                    <NavLink activeClassName="navbar-active" to={routes.CONT}>CONTACT</NavLink>
                 </div>
             </LocalWrapper>
         );
