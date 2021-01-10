@@ -1,10 +1,13 @@
 import React       from 'react';
 import styled      from 'styled-components';
 
+import NavBar from './NavBar';
+
 const NavHamburger = ({ toggleMenu, pageStyle }) => {
   return(<>
     <Logo src="ALMA.png" style={{display: pageStyle.displayLogo, filter: pageStyle.logoColor}}/>
     <Title>ALMA CARDENAS</Title>
+    <NavBar/>
     <Hamburger name="toggleMenu" onClick={(e) => toggleMenu(e)}>
       <section style={{backgroundColor: pageStyle.color}}/>
       <section style={{backgroundColor: pageStyle.color}}/>
