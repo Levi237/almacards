@@ -3,8 +3,8 @@ import styled               from 'styled-components';
 import { Switch, Route }    from 'react-router-dom';
 import * as routes          from './constants/routes';
 
-import NavMenu from './components/nav/NavMenu';
-import NavHamburger from './components/nav/NavHamburger';
+// import NavMenu from './components/nav/NavMenu';
+import NavBar from './components/nav/NavBar';
 
 import EmailConfirmation from './components/contact/EmailConfirmation';
 import EmailSignup from './components/contact/EmailSignup';
@@ -65,16 +65,10 @@ export default class App extends Component {
     const { emailContact, pageStyle } = this.state
     return (
       <AppContainer>
-        <NavMenu toggleMenu={this.toggleMenu}/>
+        {/* <NavMenu toggleMenu={this.toggleMenu}/> */}
         <EmailSignup contactType={emailContact} toggleEmailSignup={this.toggleEmailSignup}/>
         <div className="header">
-          <Switch>         
-            <Route path={routes.HOME} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.home}/> }/>
-            <Route path={routes.PORT} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.portfolio}/> }/>
-            <Route path={routes.INFO} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.about}/> }/>
-            <Route path={routes.CONT} exact render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.mail}/> }/>
-            <Route path={routes.ROOT} render={() => <NavHamburger toggleMenu={this.toggleMenu} pageStyle={pageStyle.root}/> }/>
-          </Switch>
+<NavBar/>
         </div>
         <div className="body">
           <Switch>

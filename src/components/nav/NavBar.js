@@ -7,10 +7,11 @@ import * as routes          from '../../constants/routes';
 export default class NavBar extends Component {
 
     render(){
-        const { toggleMenu } = this.props;
+        // const { toggleMenu } = this.props;
         
         return(
-            <LocalWrapper id="bar" className="active">
+            <LocalWrapper id="bar">
+                <Title>ALMA CARDENAS</Title>
                 <div>
                     {/* <NavLink activeClassName="nav-active" to={routes.HOME} onClick={() => {toggleMenu()}}>HOME</NavLink> */}
                     <NavLink activeClassName="navbar-active" to={routes.PORT}>PORTFOLIO</NavLink>
@@ -43,7 +44,7 @@ const LocalWrapper = styled.div`
         color: #FCFF6C;
     }
     div {
-        padding-top: 85px;
+        padding-top: 80px;
         padding-right: 5vw;
     }
     button {
@@ -55,4 +56,15 @@ const LocalWrapper = styled.div`
         border: none;
         font-size: 14px;
     }
+`;
+const Title = styled.h1`
+  position: absolute;
+  z-index:991;
+  width: 100vw!important;
+  text-align:center;
+  color: #312D02;
+  text-transform: uppercase;
+  width: 36px;
+  margin: 5vw auto!important;
+  font-size: 36px
 `;
