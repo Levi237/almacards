@@ -56,6 +56,13 @@ const LocalWrapper = styled.div`
         border: none;
         font-size: 14px;
     }
+    @media screen and (max-width: 540px) {
+        text-align: center;
+        div {
+            padding-top: 20vw;
+            padding-right: 0;
+        }
+    }
 `;
 const Title = styled.h1`
   position: absolute;
@@ -64,7 +71,10 @@ const Title = styled.h1`
   text-align:center;
   color: #312D02;
   text-transform: uppercase;
-  width: 36px;
-  margin: 5vw auto!important;
-  font-size: 36px
+  margin: 40px auto!important;
+  font-size: 36px;
+  @media screen and (max-width: 540px) {
+    margin: 5vw auto!important;
+    font-size: 10vw;
+  }
 `;
