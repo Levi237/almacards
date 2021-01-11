@@ -1,43 +1,69 @@
 import React, { Component } from 'react';
 import styled               from 'styled-components';
-
+import ShowPage from './ShowPage'
 export default class PortfolioPage extends Component {
     state = {
         portfolio: [{
             id: 1, 
             title: 'Organic Flow',
             subtext: 'Hostel',
-            pallet: ['#021526','#213A40','#8C4D4D','#594C4C','#F3D6DB']
+            location: 'amsterdam', 
+            tabImg: '',
+            images: ['./projects/PROJ 1_RENDER_2.jpg','./projects/PROJ 1_RENDER_2.jpg'],
+            pallet: ['#021526','#213A40','#8C4D4D','#594C4C','#F3D6DB'],
+            description: 'The smooth shapes in the painting inspired the concept for the design of the project. Curved elements were designed in the space to mimick the sea shells and the natural movement of the lizzard. The curves in the space help residents move easily within the flow in the space making their stay here effortless.'
         },{
             id: 2, 
             title: 'Nike Space Hippie',
             subtext: 'Popup Shop',
-            pallet: ['#90C7C3','#A44D0C','#FA3619','#8D746D','#000000']
+            location: '',
+            tabImg: '',
+            images: ['',''],
+            pallet: ['#90C7C3','#A44D0C','#FA3619','#8D746D','#000000'],
+            description: ''
         },{
             id: 3, 
             title: 'Nostalgic Portal',
             subtext: 'LA Union Station',
-            pallet: ['#A6767E','#D99CCF','#07F2DB','#119E8C','#0D0D0D']
+            location: '',
+            tabImg: '',
+            images: ['',''],
+            pallet: ['#A6767E','#D99CCF','#07F2DB','#119E8C','#0D0D0D'],
+            description: ''
         },{
             id: 4, 
             title: 'Fresh',
             subtext: 'Material Board',
-            pallet: ['#185FA2','#0194E8','#EDC21D','#7BAA9E','#3E6653']
+            location: '',
+            tabImg: '',
+            images: ['',''],
+            pallet: ['#185FA2','#0194E8','#EDC21D','#7BAA9E','#3E6653'],
+            description: ''
         },{
             id: 5, 
             title: 'Syria',
             subtext: 'Restaurant',
-            pallet: ['#c4c4c4','#c4c4c4','#c4c4c4','#c4c4c4','#c4c4c4']
+            location: '',
+            tabImg: '',
+            images: ['',''],
+            pallet: ['#c4c4c4','#c4c4c4','#c4c4c4','#c4c4c4','#c4c4c4'],
+            description: ''
         },{
             id: 6, 
             title: 'Embrace',
             subtext: 'Hotel Lobby',
-            pallet: ['#c4c4c4','#c4c4c4','#c4c4c4','#c4c4c4','#c4c4c4']
-        }]
+            location: '',
+            tabImg: '',
+            images: ['',''],
+            pallet: ['#c4c4c4','#c4c4c4','#c4c4c4','#c4c4c4','#c4c4c4'],
+            description: ''
+        }],
+        selected: []
     }
 
     render(){
-        const mapPortfolio = this.state.portfolio.map((m,k)=>{
+        const { portfolio } = this.state;
+        const mapPortfolio = portfolio.map((m,k)=>{
             return(
                 <div id={m.id} key={k}>
                     <div id="image"></div>
@@ -53,9 +79,10 @@ export default class PortfolioPage extends Component {
             )
         })
         return(<>
-            <LocalWrapper>
+            {/* <LocalWrapper>
                 {mapPortfolio}
-            </LocalWrapper>
+            </LocalWrapper> */}
+                <ShowPage project={portfolio[0]}/>
         </>);
     };
 };
@@ -92,14 +119,14 @@ const LocalWrapper = styled.div`
         margin: 0 auto;
         background-color: pink;
     }
-    >div {
+    > div {
         h2 {
             font-size: 20px;
         }
         section {
             display: inline-block;
             width: 15%;
-            font-size: 8px;
+            font-size: 3px;
             text-align: center;
             color: rgba(122,122,122,.5);
         }

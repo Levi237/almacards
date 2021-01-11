@@ -44,7 +44,7 @@ const LocalWrapper = styled.div`
         color: #FCFF6C;
     }
     div {
-        padding-top: 80px;
+        padding-top: 90px;
         padding-right: 5vw;
     }
     button {
@@ -59,7 +59,7 @@ const LocalWrapper = styled.div`
     @media screen and (max-width: 540px) {
         text-align: center;
         div {
-            padding-top: 20vw;
+            padding-top: 18vw;
             padding-right: 0;
         }
     }

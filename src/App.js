@@ -68,7 +68,7 @@ export default class App extends Component {
         {/* <NavMenu toggleMenu={this.toggleMenu}/> */}
         <EmailSignup contactType={emailContact} toggleEmailSignup={this.toggleEmailSignup}/>
         <div className="header">
-<NavBar/>
+          <NavBar/>
         </div>
         <div className="body">
           <Switch>
@@ -89,7 +89,7 @@ export default class App extends Component {
 const AppContainer = styled.div`
   display: grid;
   grid-template-columns: 100% ;
-  grid-template-rows: 30vh 30vh 30vw;
+  grid-template-rows: 22vh auto 30vw;
   grid-template-areas: 
     ' header '
     ' body '
@@ -102,5 +102,8 @@ const AppContainer = styled.div`
   }
   div.footer {
     grid-area: footer;
+  }
+  @media screen and (max-width: 540px) {
+    grid-template-rows: 27.5vw 100% 30vw;
   }
 `;
