@@ -9,7 +9,7 @@ export default class PortfolioPage extends Component {
             subtext: 'Hostel',
             location: 'amsterdam', 
             tabImg: '',
-            images: ['./projects/PROJ 1_RENDER_2.jpg','./projects/PROJ 1_RENDER_2.jpg'],
+            images: ['./projects/hostel/hero.jpg','./projects/hostel/painting.jpg'],
             pallet: ['#021526','#213A40','#8C4D4D','#594C4C','#F3D6DB'],
             description: 'The smooth shapes in the painting inspired the concept for the design of the project. Curved elements were designed in the space to mimick the sea shells and the natural movement of the lizzard. The curves in the space help residents move easily within the flow in the space making their stay here effortless.'
         },{

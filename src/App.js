@@ -67,9 +67,9 @@ export default class App extends Component {
       <AppContainer>
         {/* <NavMenu toggleMenu={this.toggleMenu}/> */}
         <EmailSignup contactType={emailContact} toggleEmailSignup={this.toggleEmailSignup}/>
-        <div className="header">
+        <header className="header">
           <NavBar/>
-        </div>
+        </header>
         <div className="body">
           <Switch>
             <Route path={routes.CONF} exact render={() => <EmailConfirmation/> }/>     
@@ -78,32 +78,16 @@ export default class App extends Component {
             <Route path={routes.ROOT} render={() => <HomePage/> }/>
           </Switch>
         </div>
-        <div className="footer">
+        <footer>
           FOOTER HERE
-        </div>
+        </footer>
       </AppContainer>
     );
   }
 }
 
 const AppContainer = styled.div`
-  display: grid;
-  grid-template-columns: 100% ;
-  grid-template-rows: 22vh auto 30vw;
-  grid-template-areas: 
-    ' header '
-    ' body '
-    ' footer ';
-  div.header {
-    grid-area: header;
-  }
-  div.body {
-    grid-area: body;
-  }
-  div.footer {
-    grid-area: footer;
-  }
-  @media screen and (max-width: 540px) {
-    grid-template-rows: 27.5vw 100% 30vw;
-  }
+header {
+  padding-bottom: 20px;
+}
 `;
