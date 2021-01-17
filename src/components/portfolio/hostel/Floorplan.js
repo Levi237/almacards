@@ -2,10 +2,58 @@ import React, { Component } from 'react';
 import styled               from 'styled-components';
 
 ;export default class Floorplan extends Component {
+    state = {
+        color: [{
+            color: '#F2D6DC',
+            label: 'Community (public) Area',
+            area: '3,324'
+        },{
+            color: '#985651',
+            label: 'Communal (resident) Area',
+            area: '963'
+        },{
+            color: '#5D504E',
+            label: 'Staff Area',
+            area: '308'
+        },{
+            color: '#717366',
+            label: 'Sleeping Unit',
+            area: '1,183'
+        },{
+            color: '#2E5159',
+            label: 'Circulation',
+            area: null
+        }],
+        number: [
+            'computer area', 
+            'laundry area', 
+            'office / storage',
+            'reception / lobby',
+            'sleeping unit'
+        ]
+    }
     render(){
-    const { project } = this.props;
+        const { color, number } = this.state;
+        const { project } = this.props;
+        const colorKey = color.map((c, k) => {
+            console.log(k, "k")
+            if (c.area) {
+                return <tr><td><div style={{background: `${c.color}`}}></div></td><td>{c.label}</td><td>{c.area} <small>SQ FT</small></td></tr>
+            } else {
+                return <tr><td style={{border: `${c.color} dashed 4px`}}></td><td>{c.label}</td></tr>
+            }
+        })
+        const numberKey = number.map((n, k) => {
+            return <tr><td><div>{k + 1}</div></td><td>{n}</td></tr>
+        })
         return(
             <LocalWrapper>
+                <table>
+                    {colorKey}
+                </table>
+                <table>
+                    {numberKey}
+                </table>
                 <div>
                     <img src="./projects/hostel/floorplan-cross_section.png"/>
                 </div>
@@ -46,6 +94,40 @@ import styled               from 'styled-components';
     }
 }
 const LocalWrapper = styled.div`
+table {
+    display: inline-block;
+    &:first-of-type {
+        border-spacing: 6px;
+        tr {
+            > td {
+                &:first-of-type {
+                    > div {
+                        height: 20px;
+                        width: 30px;
+                    }
+                }
+                &:nth-of-type(2) {
+                    width: 200px;
+                }
+                &:nth-of-type(3) {
+                    text-align: right;
+                    width: 90px;
+                }
+            }
+        }
+    }
+    &:last-of-type {
+        text-transform: uppercase;
+        div {
+            height: 20px;
+            width: 20px;
+            border: 2px solid black;
+            border-radius: 100%;
+            text-align: center;
+        }
+    }
+}
+    
     width: 100%;
     max-width 800px;
     // min-height: 100vh;

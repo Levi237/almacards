@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled               from 'styled-components';
 import ShowHero             from './ShowHero'
-export default class PortfolioPage extends Component {
+export default class Portfolio extends Component {
     state = {
         portfolio: [{
             id: 1, 
