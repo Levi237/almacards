@@ -1,39 +1,51 @@
 import React, { Component } from 'react';
 import styled               from 'styled-components';
 
-import Painting             from './Painting'
-import Floorplan            from './Floorplan'
-;export default class HostelComponent extends Component {
+;export default class Floorplan extends Component {
     render(){
     const { project } = this.props;
         return(
-            <>
-           <Painting project={project}/>
-           <Floorplan project={project}/>
-            <GridFour>
-                <img src="./projects/hostel/river.jpg"/>
-                <img src="./projects/hostel/roof-frame-draft.png"/>
-            </GridFour>
-            </>
+            <LocalWrapper>
+                <div>
+                    <img src="./projects/hostel/floorplan-cross_section.png"/>
+                </div>
+                <div>
+                    <section>
+                        <h4>
+                            Fourth Floor
+                        </h4>
+                        <img src="./projects/hostel/floorplan-4.png"/>
+                    </section>
+                    <section>
+                        <h4>
+                            Third Floor
+                        </h4>
+                        <img src="./projects/hostel/floorplan-3.png"/>
+                    </section>
+                    <section>
+                        <h4>
+                            Second Floor
+                        </h4>
+                        <img src="./projects/hostel/floorplan-2.png"/>
+                    </section>
+                    <section>
+                        <h4>
+                            First Floor
+                        </h4>
+                        <img src="./projects/hostel/floorplan-1.png"/>
+                    </section>
+                    <section>
+                        <h4>
+                            Basement
+                        </h4>
+                        <img src="./projects/hostel/floorplan-basement.png"/>
+                    </section>
+                </div>
+            </LocalWrapper>
         )
     }
 }
-const GridFour = styled.div`
-    text-align: center;
-    img {
-        &:first-of-type {
-            width: 80%;
-            max-width: 800px;
-            margin: 50px auto;
-        }
-        &:nth-of-type(2) {
-            width: 70%;
-            margin-top: -30vw;
-            opacity: .25;
-        }
-    }
-`;
-const GridThree = styled.div`
+const LocalWrapper = styled.div`
     width: 100%;
     max-width 800px;
     // min-height: 100vh;
