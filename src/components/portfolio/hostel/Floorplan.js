@@ -40,7 +40,7 @@ import styled               from 'styled-components';
             if (c.area) {
                 return <tr><td><div style={{background: `${c.color}`}}></div></td><td>{c.label}</td><td>{c.area} <small>SQ FT</small></td></tr>
             } else {
-                return <tr><td style={{border: `${c.color} dashed 4px`}}></td><td>{c.label}</td></tr>
+                return <tr><td><div><div style={{border: `${c.color} dashed`}}></div></div></td><td>{c.label}</td></tr>
             }
         })
         const numberKey = number.map((n, k) => {
@@ -93,40 +93,119 @@ import styled               from 'styled-components';
         )
     }
 }
+const tabletWidth = 900;
+const mobileWidth = 700;
+const mobileMultiple = 1.5;
 const LocalWrapper = styled.div`
-table {
-    display: inline-block;
-    &:first-of-type {
-        border-spacing: 6px;
-        tr {
-            > td {
-                &:first-of-type {
-                    > div {
-                        height: 20px;
-                        width: 30px;
+    table {
+        display: inline-block;
+        &:first-of-type {
+            border-spacing: 6px;
+            tr {
+                > td {
+                    &:first-of-type {
+                        > div {
+                            height: 20px;
+                            width: 30px;
+                            > div {
+                                height: 12px;
+                                border: 4px;
+                            }
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        width: 200px;
+                    }
+                    &:nth-of-type(3) {
+                        text-align: right;
+                        width: 90px;
                     }
                 }
-                &:nth-of-type(2) {
-                    width: 200px;
+            }
+            @media screen and (max-width: ${tabletWidth}px) {
+                border-spacing: 1vw;
+                font-size: 2vw;
+                tr {
+                    > td {
+                        &:first-of-type {
+                            > div {
+                                height: 4vw;
+                                width: 6vw;
+                                > div {
+                                    height: 2vw;
+                                    border-width: 1vw!important;
+                                }
+                            }
+                        }
+                        &:nth-of-type(2) {
+                            width: 25vw;
+                        }
+                        &:nth-of-type(3) {
+                            text-align: right;
+                            width: 12vw;
+                        }
+                    }
                 }
-                &:nth-of-type(3) {
-                    text-align: right;
-                    width: 90px;
+            }
+            @media screen and (max-width: ${mobileWidth}px) {
+                border-spacing: calc(1vw * ${mobileMultiple});
+                font-size: calc(2vw * ${mobileMultiple});
+                tr {
+                    > td {
+                        &:first-of-type {
+                            > div {
+                                height: calc(4vw * ${mobileMultiple});
+                                width: calc(6vw * ${mobileMultiple});
+                                > div {
+                                    height: calc(2vw * ${mobileMultiple});
+                                    border-width: calc(1vw * ${mobileMultiple})!important;
+                                }
+                            }
+                        }
+                        &:nth-of-type(2) {
+                            width: calc(25vw * ${mobileMultiple});
+                        }
+                        &:nth-of-type(3) {
+                            text-align: right;
+                            width: calc(12vw * ${mobileMultiple});
+                        }
+                    }
+                }
+            }
+        }
+        &:last-of-type {
+            text-transform: uppercase;
+            div {
+                height: 20px;
+                width: 20px;
+                border: 1vw solid black;
+                border-radius: 100%;
+                text-align: center;
+            }
+            @media screen and (max-width: ${tabletWidth}px) {
+                font-size: 2vw;
+                div {
+                    height: 3vw;
+                    width: 3vw;
+                    border: .5vw solid black;
+                    line-height: 3vw;
+                    border-radius: 100%;
+                    text-align: center;
+                }
+            }
+            @media screen and (max-width: ${mobileWidth}px) {
+                font-size: calc(2vw * ${mobileMultiple});
+                div {
+                    height: calc(3vw * ${mobileMultiple});
+                    width: calc(3vw * ${mobileMultiple});
+                    line-height: calc(3vw * ${mobileMultiple});
+                    border: calc(.5vw * ${mobileMultiple}) solid black;
+                    border-radius: 100%;
+                    text-align: center;
                 }
             }
         }
     }
-    &:last-of-type {
-        text-transform: uppercase;
-        div {
-            height: 20px;
-            width: 20px;
-            border: 2px solid black;
-            border-radius: 100%;
-            text-align: center;
-        }
-    }
-}
     
     width: 100%;
     max-width 800px;
@@ -155,78 +234,6 @@ table {
         img {
             width: 100%;
             // cursor: zoom-in;
-        }
-    }
-`;
-const GridTwo = styled.div`
-    width: 80vw;
-    padding: 10vw;
-    background-color: #F6E6E9;
-    display: grid;
-    grid-template-columns: 15vw 63vw;
-    grid-template-rows: 42vw 15vw;
-    grid-template-areas: 
-        ' sidebar painting '
-        ' sidebar bottombar ';
-    > div {
-        &:first-of-type {
-            grid-area: sidebar;
-            > img {
-                width: 11vw;
-                margin: 2.5vw 0 0 0;
-                &:first-of-type {
-                    margin: 0;
-                }
-            }
-        }
-        &:nth-of-type(2) {
-            grid-area: painting;
-            > img {
-                width: 100%;
-                margin: 0 0 0 0;
-            }
-        }
-        &:nth-of-type(3) {
-            grid-area: bottombar;
-            section {
-                display: inline-block;
-                vertical-align: top;
-                text-align: center;
-                width: 10vw;
-                margin: 0 1.3vw;
-                img {
-                    width: 100%;
-                }
-                h4 {
-                    font-size: 1.125vw;
-                    text-transform: uppercase;
-                    font-weight: 300;
-                }
-            }
-        }
-    }
-    h1 {
-        font-size: 7.5vw;
-        letter-spacing: .125vw;
-    }
-    h2 {
-        font-size: 5vw;
-    }
-    p {
-        font-size: 1vw;
-    }
-    @media screen and (max-width: 540px) {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto auto auto;
-        grid-template-areas: 
-        ' . one two three four . '
-        ' . painting painting painting painting . '
-        ' . five five five five . ';
-        p {
-            font-size: 2.75vw;
-        }
-        > div > img {
-            width: 100%;
         }
     }
 `;
