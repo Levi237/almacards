@@ -8,52 +8,108 @@ export default class HostelComponent extends Component {
             <>
             <GridTwo>
                 <div>
-                    <img src="./projects/hostel/shells.png"/>
-                    <img src="./projects/hostel/shells.png"/>
-                    <img src="./projects/hostel/shells.png"/>
-                    <img src="./projects/hostel/shells.png"/>
+                    <img src="./projects/hostel/2D_1.png"/>
+                    <img src="./projects/hostel/2D_2.png"/>
+                    <img src="./projects/hostel/3D_1.png"/>
+                    <img src="./projects/hostel/3D_2.png"/>
                 </div>
                 <div>
                     <img src="./projects/hostel/painting.jpg"/>
                 </div>
                 <div>
-                    <img src="./projects/hostel/vase.png"/>
-                    <img src="./projects/hostel/lizard.png"/>
-                    <img src="./projects/hostel/shells.png"/>
-                    <img src="./projects/hostel/diagram1.png"/>
-                    <img src="./projects/hostel/diagram2.png"/>
+                    <section>
+                        <img src="./projects/hostel/vase.png"/>
+                        <h3>
+                            curvelinear
+                        </h3>
+                    </section>
+                    <section>
+                        <img src="./projects/hostel/lizard.png"/>
+                        <h3>
+                            undulating rhythm
+                        </h3>
+                    </section>
+                    <section>
+                        <img src="./projects/hostel/shells.png"/>
+                        <h3>
+                            smooth edge, repetition
+                        </h3>
+                    </section>
+                    <section>
+                        <img src="./projects/hostel/diagram1.png"/>
+                        <h3>
+                            diagram 1
+                        </h3>
+                    </section>
+                    <section>
+                        <img src="./projects/hostel/diagram2.png"/>
+                        <h3>
+                            diagram 2
+                        </h3>
+                    </section>
                 </div>
             </GridTwo>
             <GridThree>
                 <div>
-                    <section><img src="./projects/hostel/floorplan-4.png"/></section>
-                    <section><img src="./projects/hostel/floorplan-3.png"/></section>
-                    <section><img src="./projects/hostel/floorplan-2.png"/></section>
-                    <section><img src="./projects/hostel/floorplan-1.png"/></section>
-                    <section><img src="./projects/hostel/floorplan-basement.png"/></section>
+                    <img src="./projects/hostel/floorplan-cross_section.png"/>
+                </div>
+                <div>
+                    <section>
+                        <img src="./projects/hostel/floorplan-4.png"/>
+                    </section>
+                    <section>
+                        <img src="./projects/hostel/floorplan-3.png"/>
+                    </section>
+                    <section>
+                        <img src="./projects/hostel/floorplan-2.png"/>
+                    </section>
+                    <section>
+                        <img src="./projects/hostel/floorplan-1.png"/>
+                    </section>
+                    <section>
+                        <img src="./projects/hostel/floorplan-basement.png"/>
+                    </section>
                 </div>
             </GridThree>
             </>
         )
     }
 }
-const GridThree = styled.div``;
+const GridThree = styled.div`
+width: 100%;
+max-width 800px;
+min-height: 100vh;
+margin: 0 auto;
+
+    > div {
+        display: inline-block;
+        &:first-of-type {
+            width: 70%
+        }
+        &:last-of-type {
+            width: 30% 
+        }
+        img {
+            width: 100%;
+        }
+    }
+`;
 const GridTwo = styled.div`
     width: 80vw;
     padding: 10vw;
     background-color: #F6E6E9;
     display: grid;
     grid-template-columns: 15vw 63vw;
-    grid-template-rows: 55vw 10vw;
+    grid-template-rows: 42vw 15vw;
     grid-template-areas: 
         ' sidebar painting '
-        ' bottombar bottombar ';
+        ' sidebar bottombar ';
     > div {
         &:first-of-type {
             grid-area: sidebar;
             > img {
-                width: 10vw;
-                margin: 3.34vw 0 0 0;
+                width: 11vw;
+                margin: 2.5vw 0 0 0;
                 &:first-of-type {
                     margin: 0;
                 }
@@ -68,9 +124,20 @@ const GridTwo = styled.div`
         }
         &:nth-of-type(3) {
             grid-area: bottombar;
-            > img {
+            section {
+                display: inline-block;
+                vertical-align: top;
+                text-align: center;
                 width: 10vw;
-                margin: 0 2.5vw;
+                margin: 0 1.3vw;
+                img {
+                    width: 100%;
+                }
+                h3 {
+                    font-size: 1.125vw;
+                    text-transform: uppercase;
+                    font-weight: 300;
+                }
             }
         }
     }
