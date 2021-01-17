@@ -5,12 +5,10 @@ import styled               from 'styled-components';
     render(){
     const { project } = this.props;
         return(
-            <>
             <LocalHost>
                 <img src="./projects/hostel/river.jpg"/>
                 <img src="./projects/hostel/roof-frame-draft.png"/>
             </LocalHost>
-            </>
         )
     }
 }
