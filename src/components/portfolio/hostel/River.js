@@ -6,15 +6,15 @@ import styled               from 'styled-components';
     const { project } = this.props;
         return(
             <>
-            <GridFour>
+            <LocalHost>
                 <img src="./projects/hostel/river.jpg"/>
                 <img src="./projects/hostel/roof-frame-draft.png"/>
-            </GridFour>
+            </LocalHost>
             </>
         )
     }
 }
-const GridFour = styled.div`
+const LocalHost = styled.div`
     text-align: center;
     img {
         &:first-of-type {
