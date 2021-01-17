@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import styled               from 'styled-components';
 
-import HostelComponent      from './Hostel';
+import HostelComponent      from './hostel/Hostel';
 
-export default class ShowPage extends Component {
+export default class ShowHero extends Component {
     render(){
     const { project } = this.props;
         return(<>

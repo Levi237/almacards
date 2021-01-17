@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled               from 'styled-components';
-import ShowPage from './ShowPage'
+import ShowHero             from './ShowHero'
 export default class PortfolioPage extends Component {
     state = {
         portfolio: [{
@@ -82,7 +82,7 @@ export default class PortfolioPage extends Component {
             {/* <LocalWrapper>
                 {mapPortfolio}
             </LocalWrapper> */}
-                <ShowPage project={portfolio[0]}/>
+                <ShowHero project={portfolio[0]}/>
         </>);
     };
 };

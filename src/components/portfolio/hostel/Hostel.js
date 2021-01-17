@@ -86,16 +86,36 @@ export default class HostelComponent extends Component {
                     </section>
                 </div>
             </GridThree>
+            <GridFour>
+                <img src="./projects/hostel/river.jpg"/>
+                <img src="./projects/hostel/roof-frame-draft.png"/>
+
+            </GridFour>
             </>
         )
     }
 }
+const GridFour = styled.div`
+    text-align: center;
+    img {
+        &:first-of-type {
+            width: 80%;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        &:nth-of-type(2) {
+            width: 70%;
+            margin-top: -30vw;
+            opacity: .5;
+        }
+    }
+`;
 const GridThree = styled.div`
-width: 100%;
-max-width 800px;
-// min-height: 100vh;
-margin: 0 auto;
-padding: 50px 0;
+    width: 100%;
+    max-width 800px;
+    // min-height: 100vh;
+    margin: 0 auto;
+    padding: 50px 0;
     > div {
         display: inline-block;
         &:first-of-type {
