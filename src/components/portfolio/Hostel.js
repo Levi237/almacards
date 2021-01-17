@@ -19,33 +19,33 @@ export default class HostelComponent extends Component {
                 <div>
                     <section>
                         <img src="./projects/hostel/vase.png"/>
-                        <h3>
+                        <h4>
                             curvelinear
-                        </h3>
+                        </h4>
                     </section>
                     <section>
                         <img src="./projects/hostel/lizard.png"/>
-                        <h3>
+                        <h4>
                             undulating rhythm
-                        </h3>
+                        </h4>
                     </section>
                     <section>
                         <img src="./projects/hostel/shells.png"/>
-                        <h3>
+                        <h4>
                             smooth edge, repetition
-                        </h3>
+                        </h4>
                     </section>
                     <section>
                         <img src="./projects/hostel/diagram1.png"/>
-                        <h3>
+                        <h4>
                             diagram 1
-                        </h3>
+                        </h4>
                     </section>
                     <section>
                         <img src="./projects/hostel/diagram2.png"/>
-                        <h3>
+                        <h4>
                             diagram 2
-                        </h3>
+                        </h4>
                     </section>
                 </div>
             </GridTwo>
@@ -55,18 +55,33 @@ export default class HostelComponent extends Component {
                 </div>
                 <div>
                     <section>
+                        <h4>
+                            Fourth Floor
+                        </h4>
                         <img src="./projects/hostel/floorplan-4.png"/>
                     </section>
                     <section>
+                        <h4>
+                            Third Floor
+                        </h4>
                         <img src="./projects/hostel/floorplan-3.png"/>
                     </section>
                     <section>
+                        <h4>
+                            Second Floor
+                        </h4>
                         <img src="./projects/hostel/floorplan-2.png"/>
                     </section>
                     <section>
+                        <h4>
+                            First Floor
+                        </h4>
                         <img src="./projects/hostel/floorplan-1.png"/>
                     </section>
                     <section>
+                        <h4>
+                            Basement
+                        </h4>
                         <img src="./projects/hostel/floorplan-basement.png"/>
                     </section>
                 </div>
@@ -78,19 +93,31 @@ export default class HostelComponent extends Component {
 const GridThree = styled.div`
 width: 100%;
 max-width 800px;
-min-height: 100vh;
+// min-height: 100vh;
 margin: 0 auto;
-
+padding: 50px 0;
     > div {
         display: inline-block;
         &:first-of-type {
             width: 70%
         }
         &:last-of-type {
-            width: 30% 
+            width: 30%;
+            > section {
+                position: relative;
+            }
+            img {
+                cursor: zoom-in;
+            }
+            h4 {
+                position: absolute;
+                top: 1vw;
+                left: 1vw;
+            }
         }
         img {
             width: 100%;
+            // cursor: zoom-in;
         }
     }
 `;
@@ -133,7 +160,7 @@ const GridTwo = styled.div`
                 img {
                     width: 100%;
                 }
-                h3 {
+                h4 {
                     font-size: 1.125vw;
                     text-transform: uppercase;
                     font-weight: 300;
