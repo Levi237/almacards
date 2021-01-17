@@ -41,7 +41,7 @@ const ColorBar = styled.div`
 }
 `;
 const LocalWrapper = styled.div`
-    width: 100vw;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto auto;
@@ -54,7 +54,6 @@ const LocalWrapper = styled.div`
             padding-left: 2.5vw;
             > div:first-of-type {
                 position: absolute;
-                width: 100vw;
             }
             > div:last-of-type {
                 position: relative!important;
