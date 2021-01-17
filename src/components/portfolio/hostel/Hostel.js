@@ -106,7 +106,7 @@ const GridFour = styled.div`
         &:nth-of-type(2) {
             width: 70%;
             margin-top: -30vw;
-            opacity: .5;
+            opacity: .25;
         }
     }
 `;
