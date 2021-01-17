@@ -1,106 +1,58 @@
 import React, { Component } from 'react';
 import styled               from 'styled-components';
 
-import Painting from './Painting'
-;export default class HostelComponent extends Component {
+export default class Painting extends Component {
     render(){
     const { project } = this.props;
         return(
-            <>
-           <Painting/>
-            <GridThree>
+            <LocalWrapper>
                 <div>
-                    <img src="./projects/hostel/floorplan-cross_section.png"/>
+                    <img src="./projects/hostel/2D_1.png"/>
+                    <img src="./projects/hostel/2D_2.png"/>
+                    <img src="./projects/hostel/3D_1.png"/>
+                    <img src="./projects/hostel/3D_2.png"/>
+                </div>
+                <div>
+                    <img src="./projects/hostel/painting.jpg"/>
                 </div>
                 <div>
                     <section>
+                        <img src="./projects/hostel/vase.png"/>
                         <h4>
-                            Fourth Floor
+                            curvelinear
                         </h4>
-                        <img src="./projects/hostel/floorplan-4.png"/>
                     </section>
                     <section>
+                        <img src="./projects/hostel/lizard.png"/>
                         <h4>
-                            Third Floor
+                            undulating rhythm
                         </h4>
-                        <img src="./projects/hostel/floorplan-3.png"/>
                     </section>
                     <section>
+                        <img src="./projects/hostel/shells.png"/>
                         <h4>
-                            Second Floor
+                            smooth edge, repetition
                         </h4>
-                        <img src="./projects/hostel/floorplan-2.png"/>
                     </section>
                     <section>
+                        <img src="./projects/hostel/diagram1.png"/>
                         <h4>
-                            First Floor
+                            diagram 1
                         </h4>
-                        <img src="./projects/hostel/floorplan-1.png"/>
                     </section>
                     <section>
+                        <img src="./projects/hostel/diagram2.png"/>
                         <h4>
-                            Basement
+                            diagram 2
                         </h4>
-                        <img src="./projects/hostel/floorplan-basement.png"/>
                     </section>
                 </div>
-            </GridThree>
-            <GridFour>
-                <img src="./projects/hostel/river.jpg"/>
-                <img src="./projects/hostel/roof-frame-draft.png"/>
-
-            </GridFour>
-            </>
+            </LocalWrapper>
         )
     }
 }
-const GridFour = styled.div`
-    text-align: center;
-    img {
-        &:first-of-type {
-            width: 80%;
-            max-width: 800px;
-            margin: 50px auto;
-        }
-        &:nth-of-type(2) {
-            width: 70%;
-            margin-top: -30vw;
-            opacity: .25;
-        }
-    }
-`;
-const GridThree = styled.div`
-    width: 100%;
-    max-width 800px;
-    // min-height: 100vh;
-    margin: 0 auto;
-    padding: 50px 0;
-    > div {
-        display: inline-block;
-        &:first-of-type {
-            width: 70%
-        }
-        &:last-of-type {
-            width: 30%;
-            > section {
-                position: relative;
-            }
-            img {
-                cursor: zoom-in;
-            }
-            h4 {
-                position: absolute;
-                top: 1vw;
-                left: 1vw;
-            }
-        }
-        img {
-            width: 100%;
-            // cursor: zoom-in;
-        }
-    }
-`;
-const GridTwo = styled.div`
+
+const LocalWrapper = styled.div`
     width: 80vw;
     padding: 10vw;
     background-color: #F6E6E9;
