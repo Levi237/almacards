@@ -5,11 +5,11 @@ import styled               from 'styled-components';
     state = {
         color: [{
             color: '#F2D6DC',
-            label: 'Community (public) Area',
+            label: 'Community (public)',
             area: '3,324'
         },{
             color: '#985651',
-            label: 'Communal (resident) Area',
+            label: 'Communal (resident)',
             area: '963'
         },{
             color: '#5D504E',
@@ -48,6 +48,8 @@ import styled               from 'styled-components';
         })
         return(
             <LocalWrapper>
+                <h1>Floor Plans</h1>
+                <h4>SCALE: 1/4" - 1'O"</h4>
                 <table>
                     {colorKey}
                 </table>
@@ -62,6 +64,35 @@ const tabletWidth = 900;
 const mobileWidth = 700;
 const mobileMultiple = 1.25;
 const LocalWrapper = styled.section`
+    text-transform: uppercase;
+    h1 {
+        font-size: 40px;
+        font-weight: 800;
+        @media screen and (max-width: ${tabletWidth}px) {
+            font-size: 5vw;
+            margin: 0 1vw;
+            padding: 0 .5vw;
+        }
+        @media screen and (max-width: ${mobileWidth}px) {
+            font-size: calc(5vw * ${mobileMultiple});
+            margin: 0 calc(1vw * ${mobileMultiple});
+            padding:0 calc(5.vw * ${mobileMultiple});
+        }
+    }
+    h4 {
+        font-size: 20px;
+        font-weight: 300;
+        @media screen and (max-width: ${tabletWidth}px) {
+            font-size: 2.5vw;
+            margin: 0 1vw;
+            padding: 0 .5vw;
+        }
+        @media screen and (max-width: ${mobileWidth}px) {
+            font-size: calc(2.5vw * ${mobileMultiple});
+            margin: 0 calc(1vw * ${mobileMultiple});
+            padding: 0 calc(5.vw * ${mobileMultiple});
+        }
+    }
     table {
         display: inline-block;
         vertical-align: top;
@@ -76,7 +107,6 @@ const LocalWrapper = styled.section`
                             width: 30px;
                             > div {
                                 height: 12px;
-                                border: 4px;
                             }
                         }
                     }
@@ -91,7 +121,7 @@ const LocalWrapper = styled.section`
             }
             @media screen and (max-width: ${tabletWidth}px) {
                 border-spacing: .5vw;
-                margin: 2vw;
+                margin: 1vw;
                 font-size: 2vw;
                 tr {
                     > td {
@@ -143,11 +173,10 @@ const LocalWrapper = styled.section`
             }
         }
         &:last-of-type {
-            text-transform: uppercase;
             div {
                 height: 20px;
                 width: 20px;
-                border: 1vw solid black;
+                border: 4px solid black;
                 border-radius: 100%;
                 text-align: center;
             }
