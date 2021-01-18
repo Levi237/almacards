@@ -95,10 +95,12 @@ import styled               from 'styled-components';
 }
 const tabletWidth = 900;
 const mobileWidth = 700;
-const mobileMultiple = 1.5;
+const mobileMultiple = 1.33;
 const LocalWrapper = styled.div`
     table {
         display: inline-block;
+        vertical-align: top;
+        margin: 20px;
         &:first-of-type {
             border-spacing: 6px;
             tr {
@@ -123,7 +125,8 @@ const LocalWrapper = styled.div`
                 }
             }
             @media screen and (max-width: ${tabletWidth}px) {
-                border-spacing: 1vw;
+                border-spacing: .5vw;
+                margin: 2vw;
                 font-size: 2vw;
                 tr {
                     > td {
@@ -138,7 +141,7 @@ const LocalWrapper = styled.div`
                             }
                         }
                         &:nth-of-type(2) {
-                            width: 25vw;
+                            width: 26vw;
                         }
                         &:nth-of-type(3) {
                             text-align: right;
@@ -148,14 +151,15 @@ const LocalWrapper = styled.div`
                 }
             }
             @media screen and (max-width: ${mobileWidth}px) {
-                border-spacing: calc(1vw * ${mobileMultiple});
+                border-spacing: calc(.5vw * ${mobileMultiple});
                 font-size: calc(2vw * ${mobileMultiple});
+                margin: calc(1vw * ${mobileMultiple});
                 tr {
                     > td {
                         &:first-of-type {
                             > div {
                                 height: calc(4vw * ${mobileMultiple});
-                                width: calc(6vw * ${mobileMultiple});
+                                width: calc(4vw * ${mobileMultiple});
                                 > div {
                                     height: calc(2vw * ${mobileMultiple});
                                     border-width: calc(1vw * ${mobileMultiple})!important;
@@ -163,7 +167,7 @@ const LocalWrapper = styled.div`
                             }
                         }
                         &:nth-of-type(2) {
-                            width: calc(25vw * ${mobileMultiple});
+                            width: calc(26vw * ${mobileMultiple});
                         }
                         &:nth-of-type(3) {
                             text-align: right;
@@ -183,7 +187,9 @@ const LocalWrapper = styled.div`
                 text-align: center;
             }
             @media screen and (max-width: ${tabletWidth}px) {
+                border-spacing: .5vw;
                 font-size: 2vw;
+                margin: 1vw;
                 div {
                     height: 3vw;
                     width: 3vw;
@@ -195,6 +201,8 @@ const LocalWrapper = styled.div`
             }
             @media screen and (max-width: ${mobileWidth}px) {
                 font-size: calc(2vw * ${mobileMultiple});
+                border-spacing: calc(.5vw * ${mobileMultiple});
+                margin: calc(1vw * ${mobileMultiple});
                 div {
                     height: calc(3vw * ${mobileMultiple});
                     width: calc(3vw * ${mobileMultiple});
@@ -209,7 +217,6 @@ const LocalWrapper = styled.div`
     
     width: 100%;
     max-width 800px;
-    // min-height: 100vh;
     margin: 0 auto;
     padding: 50px 0;
     > div {
@@ -233,7 +240,6 @@ const LocalWrapper = styled.div`
         }
         img {
             width: 100%;
-            // cursor: zoom-in;
         }
     }
 `;
