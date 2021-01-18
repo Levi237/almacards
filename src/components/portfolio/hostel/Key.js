@@ -54,7 +54,6 @@ import styled               from 'styled-components';
                 <table>
                     {numberKey}
                 </table>
-               
             </LocalWrapper>
         )
     }
