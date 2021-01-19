@@ -9,10 +9,10 @@ export default class ViewPlan extends Component {
             <LocalWrapper>
                <Key><br/></Key>
                     <section>
+                        <div>
                         <h2>
                             Fourth Floor
                         </h2>
-                        <div>
 
                         <img src="./projects/hostel/floorplan-4.png"/>
                         </div>
@@ -45,7 +45,7 @@ export default class ViewPlan extends Component {
         )
     }
 }
-const tabletWidth = 1025;
+const tabletWidth = 900;
 const mobileWidth = 700;
 const mobileMultiple = 1.25;
 const LocalWrapper = styled.div`
@@ -57,41 +57,92 @@ const LocalWrapper = styled.div`
     width: 100vw;
     padding: 0;
     margin: 0;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
     h2 {
-        text-align: right;
-        font-size: 8vw;
-        position: absolute;
         width: 100%;
-        right: 2vw;
-        top: 2vw;
+        font-size: 4vw;
+        // text-align: right;
+        // position: absolute;
+        // right: 2vw;
+        // top: 2vw;
     }
     > section {
         &:first-of-type {
             position: absolute;
-            top: 5vh;
-            right: 0;
-            text-align: right;
+            // top: 5vh;
+            // right: 0;
+            // text-align: right;
+            br {
+                display: none;
+            }
         }
         &:last-of-type {
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             height: 100vh;
             width: 100vw;
             overflow: hidden;
             > div {
-                height: 100vh;
-                width: 100vw;
-                position: absolute;
+                // height: 100vh;
+                // width: 100vw;
+                // position: absolute;
                 img {
-                    transform: rotate(90deg);
-                    position: absolute;
-                    width: 90vh;
-                    max-width: 180%;
-                    top: 25vh;
-                    left: -25vh;
+                    // transform: rotate(90deg);
+                    // position: absolute;
+                    width: 90vw;
+                    // max-width: 180%;
+                    // top: 25vh;
+                    // left: -25vh;
                 }
             }
         }
     }
-    // @media screen and (max-width: ${tabletWidth}px) {
-    // }
+    @media screen and (max-width: ${tabletWidth}px) {
+        height: calc(100vh);
+        width: 100vw;
+        padding: 0;
+        margin: 0;
+        h2 {
+            text-align: right;
+            font-size: 8vw;
+            position: absolute;
+            width: 100%;
+            right: 2vw;
+            top: 2vw;
+        }
+        > section {
+            &:first-of-type {
+                position: absolute;
+                top: 5vh;
+                right: 0;
+                text-align: right;
+                br {
+                    display: block;
+                }
+            }
+            &:last-of-type {
+                position: relative;
+                height: 100vh;
+                width: 100vw;
+                overflow: hidden;
+                > div {
+                    height: 100vh;
+                    width: 100vw;
+                    position: absolute;
+                    img {
+                        transform: rotate(90deg);
+                        position: absolute;
+                        width: 90vh;
+                        max-width: 180%;
+                        top: 25vh;
+                        left: -25vh;
+                    }
+                }
+            }
+        }
+    }
 `;
