@@ -9,6 +9,8 @@ import NavBar from './components/nav/NavBar';
 import EmailConfirmation from './components/contact/EmailConfirmation';
 import EmailSignup from './components/contact/EmailSignup';
 
+import ViewPlan from './components/portfolio/hostel/ViewPlan';
+
 import HomePage from './components/home';
 import Portfolio from './components/portfolio';
 
@@ -67,6 +69,7 @@ export default class App extends Component {
       <AppContainer>
         {/* <NavMenu toggleMenu={this.toggleMenu}/> */}
         <EmailSignup contactType={emailContact} toggleEmailSignup={this.toggleEmailSignup}/>
+        <ViewPlan />
         <header className="header">
           <NavBar/>
         </header>
