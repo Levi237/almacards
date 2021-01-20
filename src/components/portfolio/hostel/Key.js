@@ -38,7 +38,7 @@ import styled               from 'styled-components';
         const colorKey = color.map((c, k) => {
             console.log(k, "k")
             if (c.area) {
-                return <tr><td><div style={{background: `${c.color}`}}></div></td><td>{c.label}</td><td>{c.area} <small>SQ FT</small></td></tr>
+                return <tr><td><div style={{background: `${c.color}`}}></div></td><td><section>{c.label}</section><section>{c.area} <small>SQ FT</small></section></td></tr>
             } else {
                 return <tr><td><div><div style={{border: `${c.color} dashed`}}></div></div></td><td>{c.label}</td></tr>
             }
@@ -116,7 +116,7 @@ const ColorTable = styled(GlobalTable)`
                     }
                 }
                 &:nth-of-type(2) {
-                    width: 24vw;
+                    width: 25vw;
                 }
                 &:nth-of-type(3) {
                     text-align: right;
@@ -126,7 +126,7 @@ const ColorTable = styled(GlobalTable)`
         }
     }
     @media screen and (max-width: ${mobileWidth}px) {
-        display: block;
+        // display: block;
         font-size: calc(2vw * ${mobileMultiple});
         margin: calc(1vw * ${mobileMultiple});
         tr {
@@ -142,7 +142,7 @@ const ColorTable = styled(GlobalTable)`
                     }
                 }
                 &:nth-of-type(2) {
-                    width: calc(20vw * ${mobileMultiple});
+                    width: calc(25vw * ${mobileMultiple});
                 }
                 &:nth-of-type(3) {
                     width: calc(12vw * ${mobileMultiple});
