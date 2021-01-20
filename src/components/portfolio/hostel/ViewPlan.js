@@ -9,31 +9,20 @@ export default class ViewPlan extends Component {
     }
     render(){
         const { plans } = this.state;
-        // const mapPlans = plans.map((p, k) => {
-        //     return (
-        //         <>
-        //             <Key>{p} Floor</Key>
-        //             <section>
-        //                 <div>
-        //                 <img src={`./projects/hostel/floorplan-${p}.png`}/>
-        //                 </div>
-        //             </section>
-        //         </>
-        //     )
-        // })
+        const mapPlans = plans.map( p => { return <img className="toggle-hide toggle-display" src={`./projects/hostel/floorplan-${p}.png`}/> });
         return(
             <LocalWrapper>
                <Key>{plans[3]}</Key>
                 <section><h1>TEST</h1>test</section>
                 <section>
                     <div>
-                        <img src={`./projects/hostel/floorplan-${plans[3]}.png`}/>
+                        {mapPlans}
                     </div>
                 </section>
             </LocalWrapper>
-        )
-    }
-}
+        );
+    };
+};
 const tabletWidth = 900;
 const mobileWidth = 700;
 const mobileMultiple = 1.25;
@@ -89,7 +78,7 @@ const LocalWrapper = styled.div`
                 > div {
                     height: 100vh;
                     width: 100vw;
-                    position: absolute;
+                    position: relative;
                     img {
                         transform: rotate(90deg);
                         position: absolute;
