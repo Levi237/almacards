@@ -2,41 +2,34 @@ import React, { Component } from 'react';
 import styled               from 'styled-components';
 
 import Key from './Key';
+import { breakStatement } from '@babel/types';
 export default class ViewPlan extends Component {
+    state = {
+        plans: ['basement', 'first', 'second', 'third', 'fourth']
+    }
     render(){
-        const { project } = this.props;
+        const { plans } = this.state;
+        // const mapPlans = plans.map((p, k) => {
+        //     return (
+        //         <>
+        //             <Key>{p} Floor</Key>
+        //             <section>
+        //                 <div>
+        //                 <img src={`./projects/hostel/floorplan-${p}.png`}/>
+        //                 </div>
+        //             </section>
+        //         </>
+        //     )
+        // })
         return(
             <LocalWrapper>
-               <Key>Fourth Floor</Key>
+               <Key>{plans[3]}</Key>
+                <section><h1>TEST</h1>test</section>
                 <section>
                     <div>
-                    <img src="./projects/hostel/floorplan-4.png"/>
+                        <img src={`./projects/hostel/floorplan-${plans[3]}.png`}/>
                     </div>
                 </section>
-                {/* <section>
-                    <h2>
-                        Third Floor
-                    </h2>
-                    <img src="./projects/hostel/floorplan-3.png"/>
-                </section>
-                <section>
-                    <h2>
-                        Second Floor
-                    </h2>
-                    <img src="./projects/hostel/floorplan-2.png"/>
-                </section>
-                <section>
-                    <h2>
-                        First Floor
-                    </h2>
-                    <img src="./projects/hostel/floorplan-1.png"/>
-                </section>
-                <section>
-                    <h2>
-                        Basement
-                    </h2>
-                    <img src="./projects/hostel/floorplan-basement.png"/>
-                </section> */}
             </LocalWrapper>
         )
     }
@@ -49,9 +42,8 @@ const LocalWrapper = styled.div`
     z-index: 1000000;
     overflow: auto;
     background-color: #fff;
-    height: calc(100vh);
+    height: 100%;
     width: 100vw;
-    padding: 0;
     margin: 0;
     > section {
         &:first-of-type {
@@ -68,16 +60,8 @@ const LocalWrapper = styled.div`
             width: 100vw;
             overflow: hidden;
             > div {
-                // height: 100vh;
-                // width: 100vw;
-                // position: absolute;
                 img {
-                    // transform: rotate(90deg);
-                    // position: absolute;
-                    width: 90vw;
-                    // max-width: 180%;
-                    // top: 25vh;
-                    // left: -25vh;
+                    width: 90vw;    
                 }
             }
         }
@@ -90,7 +74,7 @@ const LocalWrapper = styled.div`
         > section {
             &:first-of-type {
                 position: absolute;
-                top: 5vh;
+                top: 6vh;
                 right: 0;
                 text-align: right;
                 br {
@@ -111,7 +95,7 @@ const LocalWrapper = styled.div`
                         position: absolute;
                         width: 90vh;
                         max-width: 180%;
-                        top: 25vh;
+                        top: 27vh;
                         left: -20vh;
                     }
                 }
