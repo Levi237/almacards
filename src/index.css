@@ -84,3 +84,10 @@ button.selectedHighlighted {
     font-size: 48px;
     letter-spacing: 4px;
 }
+
+.toggle-hide {
+  display: none;
+}
+.toggle-display {
+  display: inline-block;
+}
