@@ -73,6 +73,7 @@ const GlobalTable = styled.table`
     margin: 20px;
     text-align: left;
     border-spacing: 0;
+    font-size: 14px;
     @media screen and (max-width: ${tabletWidth}px) {
         margin: 3vw;
     }
@@ -92,7 +93,7 @@ const ColorTable = styled(GlobalTable)`
         td {
             &:first-of-type {
                 > div {
-                    height: 20px;
+                    height: 18px;
                     width: 30px;
                     margin: 2px;
                     > div {
@@ -101,7 +102,7 @@ const ColorTable = styled(GlobalTable)`
                 }
             }
             &:nth-of-type(2) {
-                width: 400px;
+                width: 260px;
             }
             &:nth-of-type(3) {
                 text-align: right;
@@ -110,6 +111,8 @@ const ColorTable = styled(GlobalTable)`
         }
     }
     @media screen and (max-width: ${tabletWidth}px) {
+        margin: 1vw;
+        font-size: 2vw;
         section {
             display: block;
             &:last-of-type {
@@ -117,8 +120,6 @@ const ColorTable = styled(GlobalTable)`
                 float: left;
             }
         }
-        margin: 1vw;
-        font-size: 2vw;
         tr {
             td {
                 &:first-of-type {
@@ -170,8 +171,8 @@ const ColorTable = styled(GlobalTable)`
 `;
 const NumberTable = styled(GlobalTable)`
     div {
-        height: 20px;
-        width: 20px;
+        height: 18px;
+        width: 18px;
         border: 2px solid #000;
         border-radius: 100%;
         text-align: center;
