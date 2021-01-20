@@ -6,7 +6,7 @@ export default class ViewNav extends Component {
     }
     render(){
         return(
-
+<></>
         );
     };
 };
