@@ -48,12 +48,15 @@ import styled               from 'styled-components';
         })
         return(
             <LocalWrapper>
-                <h1>Floor Plans</h1>
+                {(this.props.children)
+                ? <h1>{this.props.children} Plan</h1>
+                : <h1>Floor Plans</h1>
+                }
                 <h4>SCALE: 1/4" - 1'O"</h4>
                 <ColorTable>
                     {colorKey}
                 </ColorTable>
-                {this.props.children}
+                <br/>
                 <NumberTable>
                     {numberKey}
                 </NumberTable>
@@ -68,18 +71,25 @@ const GlobalTable = styled.table`
     display: inline-block;
     vertical-align: top;
     margin: 20px;
-    border-spacing: 6px;
+    // border-spacing: 6px;
     text-align: left;
     @media screen and (max-width: ${tabletWidth}px) {
         margin: 3vw;
-        border-spacing: .5vw;
+        // border-spacing: .5vw;
     }
     @media screen and (max-width: ${mobileWidth}px) {
-        border-spacing: calc(.5vw * ${mobileMultiple});
+        // border-spacing: calc(.5vw * ${mobileMultiple});
         margin: calc(3vw * ${mobileMultiple});
     }
 `;
 const ColorTable = styled(GlobalTable)`
+    section {
+        display: inline-block;
+        &:last-of-type {
+            text-align: right;
+            float: right;
+        }
+    }
     tr {
         td {
             &:first-of-type {
@@ -92,7 +102,7 @@ const ColorTable = styled(GlobalTable)`
                 }
             }
             &:nth-of-type(2) {
-                width: 200px;
+                width: 400px;
             }
             &:nth-of-type(3) {
                 text-align: right;
@@ -101,6 +111,13 @@ const ColorTable = styled(GlobalTable)`
         }
     }
     @media screen and (max-width: ${tabletWidth}px) {
+        section {
+            display: block;
+            &:last-of-type {
+                text-align: left;
+                float: left;
+            }
+        }
         margin: 1vw;
         font-size: 2vw;
         tr {
@@ -155,7 +172,7 @@ const NumberTable = styled(GlobalTable)`
     div {
         height: 20px;
         width: 20px;
-        border: 4px solid black;
+        border: 4px solid #000;
         border-radius: 100%;
         text-align: center;
     }
@@ -165,11 +182,18 @@ const NumberTable = styled(GlobalTable)`
         div {
             height: 3vw;
             width: 3vw;
-            border: .5vw solid #fff;
+            border: .5vw solid #000;
             background-color: #fff;
             line-height: 3vw;
             border-radius: 100%;
             text-align: center;
+        }
+        tr {
+            td {
+                &:nth-of-type(2) {
+                    width: calc(25vw + 2vw);
+                }
+            }
         }
     }
     @media screen and (max-width: ${mobileWidth}px) {
@@ -179,24 +203,33 @@ const NumberTable = styled(GlobalTable)`
             height: calc(3vw * ${mobileMultiple});
             width: calc(3vw * ${mobileMultiple});
             line-height: calc(3vw * ${mobileMultiple});
-            border: calc(.5vw * ${mobileMultiple}) solid black;
+            border: calc(.5vw * ${mobileMultiple}) solid #000;
             border-radius: 100%;
             text-align: center;
+        }
+        tr {
+            td {
+                &:nth-of-type(2) {
+                    width: calc(25vw * ${mobileMultiple});
+                }
+            }
         }
     }
 `;
 const LocalWrapper = styled.section`
     text-transform: uppercase;
+    width: 100%;
+    text-align: left;
     h1 {
         font-size: 40px;
         font-weight: 800;
         @media screen and (max-width: ${tabletWidth}px) {
-            font-size: 5vw;
+            font-size: 4vw;
             margin: 0 1vw;
             padding: 0 .5vw;
         }
         @media screen and (max-width: ${mobileWidth}px) {
-            font-size: calc(5vw * ${mobileMultiple});
+            font-size: calc(4vw * ${mobileMultiple});
             margin: 0 calc(1vw * ${mobileMultiple});
             padding:0 calc(5.vw * ${mobileMultiple});
         }

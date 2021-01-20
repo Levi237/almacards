@@ -7,40 +7,36 @@ export default class ViewPlan extends Component {
         const { project } = this.props;
         return(
             <LocalWrapper>
-               <Key><br/></Key>
-                    <section>
-                        <div>
-                        <h2>
-                            Fourth Floor
-                        </h2>
-
-                        <img src="./projects/hostel/floorplan-4.png"/>
-                        </div>
-                    </section>
-                    {/* <section>
-                        <h2>
-                            Third Floor
-                        </h2>
-                        <img src="./projects/hostel/floorplan-3.png"/>
-                    </section>
-                    <section>
-                        <h2>
-                            Second Floor
-                        </h2>
-                        <img src="./projects/hostel/floorplan-2.png"/>
-                    </section>
-                    <section>
-                        <h2>
-                            First Floor
-                        </h2>
-                        <img src="./projects/hostel/floorplan-1.png"/>
-                    </section>
-                    <section>
-                        <h2>
-                            Basement
-                        </h2>
-                        <img src="./projects/hostel/floorplan-basement.png"/>
-                    </section> */}
+               <Key>Fourth Floor</Key>
+                <section>
+                    <div>
+                    <img src="./projects/hostel/floorplan-4.png"/>
+                    </div>
+                </section>
+                {/* <section>
+                    <h2>
+                        Third Floor
+                    </h2>
+                    <img src="./projects/hostel/floorplan-3.png"/>
+                </section>
+                <section>
+                    <h2>
+                        Second Floor
+                    </h2>
+                    <img src="./projects/hostel/floorplan-2.png"/>
+                </section>
+                <section>
+                    <h2>
+                        First Floor
+                    </h2>
+                    <img src="./projects/hostel/floorplan-1.png"/>
+                </section>
+                <section>
+                    <h2>
+                        Basement
+                    </h2>
+                    <img src="./projects/hostel/floorplan-basement.png"/>
+                </section> */}
             </LocalWrapper>
         )
     }
@@ -57,23 +53,8 @@ const LocalWrapper = styled.div`
     width: 100vw;
     padding: 0;
     margin: 0;
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    h2 {
-        width: 100%;
-        font-size: 4vw;
-        // text-align: right;
-        // position: absolute;
-        // right: 2vw;
-        // top: 2vw;
-    }
     > section {
         &:first-of-type {
-            position: absolute;
-            // top: 5vh;
-            // right: 0;
-            // text-align: right;
             br {
                 display: none;
             }
@@ -106,14 +87,6 @@ const LocalWrapper = styled.div`
         width: 100vw;
         padding: 0;
         margin: 0;
-        h2 {
-            text-align: right;
-            font-size: 8vw;
-            position: absolute;
-            width: 100%;
-            right: 2vw;
-            top: 2vw;
-        }
         > section {
             &:first-of-type {
                 position: absolute;
@@ -139,7 +112,7 @@ const LocalWrapper = styled.div`
                         width: 90vh;
                         max-width: 180%;
                         top: 25vh;
-                        left: -25vh;
+                        left: -20vh;
                     }
                 }
             }
