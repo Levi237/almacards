@@ -223,8 +223,14 @@ const LocalWrapper = styled.section`
     text-align: left;
     position: absolute;
     margin: 1vw;
+    br {
+        display: none;
+    }
     @media screen and (max-width: ${tabletWidth}px) {
         position: relative;
+        br {
+            display: block;
+        }
     }
     h1 {
         font-size: 40px;

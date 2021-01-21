@@ -13,6 +13,7 @@ export default class ViewFloorplan extends Component {
             <LocalWrapper>
                <Key>{hostelPlan}</Key>
                 <ViewNav muteItem={muteItem} hostelPlans={hostelPlans} hostelPlan={hostelPlan}/>
+                <section><span><i></i></span><small>CLOSE</small></section>
                 <section>
                     <div>
                         <img className="" src={`./projects/hostel/floorplan-${hostelPlan}.png`}/>
@@ -35,9 +36,24 @@ const LocalWrapper = styled.div`
     width: 100vw;
     margin: 0;
     > section {
-        &:first-of-type {
-            br {
-                display: none;
+        &:nth-of-type(3){
+            position: absolute;
+            bottom: 0;
+            // font-size: 100px;
+            font-weight: 100;
+            left: calc(50% - 50px);
+            span > i {
+                transform: rotate(-135deg);
+                border: solid black;
+                border-width: 0 3px 3px 0;
+                display: inline-block;
+                padding: 3px;s
+            }
+            small {
+                display: block;
+                font-size: 9px;
+                width: 100vw;
+                text-align: center;
             }
         }
         &:last-of-type {
@@ -67,9 +83,6 @@ const LocalWrapper = styled.div`
                 top: 6vh;
                 right: 0;
                 text-align: right;
-                br {
-                    display: block;
-                }
             }
             &:last-of-type {
                 position: relative;
