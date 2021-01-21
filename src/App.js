@@ -9,7 +9,7 @@ import NavBar from './components/nav/NavBar';
 import EmailConfirmation from './components/contact/EmailConfirmation';
 import EmailSignup from './components/contact/EmailSignup';
 
-import ViewPlan from './components/portfolio/hostel/ViewPlan';
+import ViewFloorplan from './components/portfolio/hostel/ViewFloorplan';
 
 import HomePage from './components/home';
 import Portfolio from './components/portfolio';
@@ -85,7 +85,7 @@ export default class App extends Component {
       <AppContainer>
         {/* <NavMenu toggleMenu={this.toggleMenu}/> */}
         <EmailSignup contactType={emailContact} toggleEmailSignup={this.toggleEmailSignup}/>
-        {hostelPlan && <ViewPlan muteItem={this.muteItem} hostelPlan={hostelPlan} hostelPlans={hostelPlans}/>}
+        {hostelPlan && <ViewFloorplan muteItem={this.muteItem} hostelPlan={hostelPlan} hostelPlans={hostelPlans}/>}
         <header className="header">
           <NavBar/>
         </header>
@@ -93,7 +93,7 @@ export default class App extends Component {
           <Switch>
             <Route path={routes.CONF} exact render={() => <EmailConfirmation/> }/>     
             <Route path={routes.INFO} exact render={() => <h1>About Stuff</h1> }/>
-            <Route path={routes.PORT} exact render={() => <Portfolio selectPlan={this.selectPlan} hostelPlans={hostelPlans} hostelPlan={hostelPlan}/> }/>
+            <Route path={routes.PORT} exact render={() => <Portfolio selectPlan={this.selectPlan} hostelPlans={hostelPlans}/> }/>
             <Route path={routes.ROOT} render={() => <HomePage/> }/>
           </Switch>
         </div>

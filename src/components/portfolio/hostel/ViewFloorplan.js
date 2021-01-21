@@ -5,17 +5,17 @@ import Key from './Key';
 import { breakStatement } from '@babel/types';
 
 import ViewNav from './VewNav';
-export default class ViewPlan extends Component {
+export default class ViewFloorplan extends Component {
     render(){
-        const { plans, plan, muteItem } = this.props;
+        const { hostelPlans, hostelPlan, muteItem } = this.props;
         // const mapPlans = plans.map( p => { return <img className="toggle-display" src={`./projects/hostel/floorplan-${p}.png`}/> });
         return(
             <LocalWrapper>
-               <Key>{plan}</Key>
-                <ViewNav muteItem={muteItem} plans={plans} plan={plan}/>
+               <Key>{hostelPlan}</Key>
+                <ViewNav muteItem={muteItem} hostelPlans={hostelPlans} hostelPlan={hostelPlan}/>
                 <section>
                     <div>
-                        <img className="" src={`./projects/hostel/floorplan-${plan}.png`}/>
+                        <img className="" src={`./projects/hostel/floorplan-${hostelPlan}.png`}/>
                         {/* {mapPlans} */}
                     </div>
                 </section>

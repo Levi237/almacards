@@ -4,8 +4,8 @@ import styled               from 'styled-components';
 import Key from './Key';
 export default class Floorplan extends Component {
     render(){
-        const { plans, selectPlan } = this.props;
-        const mapPlans = plans.map((p, k) => {
+        const { hostelPlans, selectPlan } = this.props;
+        const mapPlans = hostelPlans.map((p, k) => {
             return (
                 <section key={k} id={p} onClick={(e) => selectPlan(e)}>
                     <h4>

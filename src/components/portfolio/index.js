@@ -84,7 +84,7 @@ export default class Portfolio extends Component {
             )
         })
         return(<>
-            { (selected === "0") && <HostelComponent project={portfolio[selected]} selectPlan={selectPlan} hostelPlans={hostelPlans} hostelPlan={hostelPlan}/> }
+            { (selected === "0") && <HostelComponent project={portfolio[selected]} selectPlan={selectPlan} hostelPlans={hostelPlans}/> }
             <LocalWrapper>
                 {mapPortfolio}
             </LocalWrapper>
