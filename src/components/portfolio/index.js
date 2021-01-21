@@ -56,17 +56,21 @@ export default class Portfolio extends Component {
             tabImg: '',
             images: ['',''],
             pallet: ['#c4c4c4','#c4c4c4','#c4c4c4','#c4c4c4','#c4c4c4'],
-            description: ''
+            description: 0
         }],
-        selected: []
+        selected: ''
     }
-
+    selectPortfolio(e){
+        this.setState({
+            selected: e.currentTarget.id
+        })
+    }
     render(){
-        const { portfolio } = this.state;
+        const { portfolio, selected } = this.state;
         const { plans, selectPlan } = this.props;
         const mapPortfolio = portfolio.map((m,k)=>{
             return(
-                <div id={m.id} key={k}>
+                <div id={k} key={k} onClick={(e) => this.selectPortfolio(e)}>
                     <div id="image"></div>
                     <h2>
                         {m.title}
@@ -80,8 +84,56 @@ export default class Portfolio extends Component {
             )
         })
         return(<>
-            {mapPortfolio}
-                <HostelComponent project={portfolio[0]} selectPlan={selectPlan} plans={plans}/>
+            { (selected === "0") && <HostelComponent project={portfolio[selected]} selectPlan={selectPlan} plans={plans}/> }
+            <LocalWrapper>
+                {mapPortfolio}
+            </LocalWrapper>
         </>);
     };
 };
+
+const LocalWrapper = styled.div`
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 30vw 30vw;
+    grid-template-area:
+    ' one two three '
+    ' four five six';
+    div#1 {
+        grid-area: one;
+    }
+    div#2 {
+        grid-area: two;
+    }
+    div#3 {
+        grid-area: three;
+    }
+    div#4 {
+        grid-area: four;
+    }
+    div#5 {
+        grid-area: five;
+    }
+    div#6 {
+        grid-area: six;
+    }
+    div#image{
+        height: 20vw;
+        width: 20vw;
+        margin: 0 auto;
+        background-color: pink;
+    }
+    > div {
+        h2 {
+            font-size: 20px;
+        }
+        section {
+            display: inline-block;
+            width: 15%;
+            font-size: 3px;
+            text-align: center;
+            color: rgba(122,122,122,.5);
+        }
+    }
+`;
