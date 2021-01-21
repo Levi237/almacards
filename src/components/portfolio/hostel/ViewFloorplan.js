@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styled               from 'styled-components';
 
 import Key from './Key';
-import { breakStatement } from '@babel/types';
 
 import ViewNav from './VewNav';
 export default class ViewFloorplan extends Component {
