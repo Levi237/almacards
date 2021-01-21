@@ -7,13 +7,13 @@ import { breakStatement } from '@babel/types';
 import ViewNav from './VewNav';
 export default class ViewFloorplan extends Component {
     render(){
-        const { hostelPlans, hostelPlan, muteItem } = this.props;
+        const { hostelPlans, hostelPlan, muteItem, closeViewFloorplan } = this.props;
         // const mapPlans = plans.map( p => { return <img className="toggle-display" src={`./projects/hostel/floorplan-${p}.png`}/> });
         return(
             <LocalWrapper>
                <Key>{hostelPlan}</Key>
                 <ViewNav muteItem={muteItem} hostelPlans={hostelPlans} hostelPlan={hostelPlan}/>
-                <section><span><i></i></span><small>CLOSE</small></section>
+                <section onClick={closeViewFloorplan}><span><i></i></span><small>CLOSE</small></section>
                 <section>
                     <div>
                         <img className="" src={`./projects/hostel/floorplan-${hostelPlan}.png`}/>
@@ -38,16 +38,19 @@ const LocalWrapper = styled.div`
     > section {
         &:nth-of-type(3){
             position: absolute;
+            z-index: 9000000000000000000000;
             bottom: 0;
             // font-size: 100px;
             font-weight: 100;
-            left: calc(50% - 50px);
+            width: 100vw;
+            text-align: center;
             span > i {
                 transform: rotate(-135deg);
                 border: solid black;
-                border-width: 0 3px 3px 0;
+                border-width: 0 2px 2px 0;
                 display: inline-block;
-                padding: 3px;s
+                padding: 10px;
+                margin: -10px;
             }
             small {
                 display: block;

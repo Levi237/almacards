@@ -86,13 +86,19 @@ export default class App extends Component {
         hostelPlan: e.currentTarget.id
     });
   };
+  closeViewFloorplan = () => {
+    console.log("close click")
+      this.setState({
+        hostelPlan: null
+    });
+  }
   render(){
     const { emailContact, pageStyle, hostelPlans, hostelPlan } = this.state
     return (
       <AppContainer>
         {/* <NavMenu toggleMenu={this.toggleMenu}/> */}
         <EmailSignup contactType={emailContact} toggleEmailSignup={this.toggleEmailSignup}/>
-        {hostelPlan && <ViewFloorplan muteItem={this.muteItem} hostelPlan={hostelPlan} hostelPlans={hostelPlans}/>}
+        {hostelPlan && <ViewFloorplan muteItem={this.muteItem} hostelPlan={hostelPlan} hostelPlans={hostelPlans} closeViewFloorplan={this.closeViewFloorplan}/>}
         <header className="header">
           <NavBar/>
         </header>
