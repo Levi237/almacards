@@ -63,9 +63,25 @@ export default class Portfolio extends Component {
 
     render(){
         const { portfolio } = this.state;
-        const { selectPlan } = this.props;
+        const { plans, selectPlan } = this.props;
+        const mapPortfolio = portfolio.map((m,k)=>{
+            return(
+                <div id={m.id} key={k}>
+                    <div id="image"></div>
+                    <h2>
+                        {m.title}
+                    </h2>
+                    <section style={{backgroundColor: m.pallet[0], color: m.pallet[0]}}>{m.pallet[0]}</section>
+                    <section style={{backgroundColor: m.pallet[1], color: m.pallet[1]}}>{m.pallet[1]}</section>
+                    <section style={{backgroundColor: m.pallet[2], color: m.pallet[2]}}>{m.pallet[2]}</section>
+                    <section style={{backgroundColor: m.pallet[3], color: m.pallet[3]}}>{m.pallet[3]}</section>
+                    <section style={{backgroundColor: m.pallet[4], color: m.pallet[4]}}>{m.pallet[4]}</section>
+                </div>
+            )
+        })
         return(<>
-                <HostelComponent project={portfolio[0]} selectPlan={selectPlan}/>
+            {mapPortfolio}
+                <HostelComponent project={portfolio[0]} selectPlan={selectPlan} plans={plans}/>
         </>);
     };
 };

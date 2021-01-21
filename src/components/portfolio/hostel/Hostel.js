@@ -7,11 +7,9 @@ import River            from './River';
 import ShowHero from '../ShowHero';
 ;export default class HostelComponent extends Component {
     state = {
-        plans: ['basement', 'first', 'second', 'third', 'fourth'],
     }
     render(){
-        const { plans } = this.state
-        const { project, selectPlan } = this.props;
+        const { project, selectPlan, plans } = this.props;
         return(
             <>
                 <ShowHero project={project}/>
