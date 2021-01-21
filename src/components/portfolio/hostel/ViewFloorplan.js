@@ -8,7 +8,6 @@ import ViewNav from './VewNav';
 export default class ViewFloorplan extends Component {
     render(){
         const { hostelPlans, hostelPlan, muteItem, closeViewFloorplan } = this.props;
-        // const mapPlans = plans.map( p => { return <img className="toggle-display" src={`./projects/hostel/floorplan-${p}.png`}/> });
         return(
             <LocalWrapper>
                <Key>{hostelPlan}</Key>
@@ -16,8 +15,7 @@ export default class ViewFloorplan extends Component {
                 <section onClick={closeViewFloorplan}><span><i></i></span><small>CLOSE</small></section>
                 <section>
                     <div>
-                        <img className="" src={`./projects/hostel/floorplan-${hostelPlan}.png`}/>
-                        {/* {mapPlans} */}
+                        <img src={`./projects/hostel/floorplan-${hostelPlan}.png`}/>
                     </div>
                 </section>
             </LocalWrapper>
