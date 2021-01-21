@@ -32,7 +32,6 @@ const LocalWrapper = styled.div`
     height: 100%;
     overflow: hidden;
     color: #FFF;
-    // position: fixed;
     a {
         letter-spacing: 1px;
         color: #312D02;
@@ -41,7 +40,7 @@ const LocalWrapper = styled.div`
         }
     }
     a:hover {
-        color: #FCFF6C;
+        color: blue;
     }
     div {
         padding-top: 90px;

@@ -5,7 +5,7 @@ import Painting             from './Painting';
 import Floorplan            from './Floorplan';
 import River            from './River';
 import ShowHero from '../ShowHero';
-;export default class HostelComponent extends Component {
+;export default class Hostel extends Component {
     state = {
     }
     render(){

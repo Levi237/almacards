@@ -48,7 +48,7 @@ const LocalWrapper = styled.div`
                 position: relative;
             }
             img {
-                filter: grayscale(1);
+                filter: grayscale(.8);
                 &:hover {
                     filter: grayscale(0);
                     cursor: zoom-in;

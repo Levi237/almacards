@@ -79,6 +79,13 @@ export default class App extends Component {
         hostelPlan: e.currentTarget.id
     });
   };
+  selectPlan = (e) => {
+    e.preventDefault();
+    console.log("click to App state", e.currentTarget.id, "where is the id");
+    this.setState({
+        hostelPlan: e.currentTarget.id
+    });
+  };
   render(){
     const { emailContact, pageStyle, hostelPlans, hostelPlan } = this.state
     return (
