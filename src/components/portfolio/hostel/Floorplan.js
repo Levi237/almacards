@@ -4,7 +4,17 @@ import styled               from 'styled-components';
 import Key from './Key';
 export default class Floorplan extends Component {
     render(){
-        const { project } = this.props;
+        const { plans, selectPlan } = this.props;
+        const mapPlans = plans.map((p, k) => {
+            return (
+                <section key={k} id={p} onClick={(e) => selectPlan(e)}>
+                    <h4>
+                        {p} Floor
+                    </h4>
+                    <img src={`./projects/hostel/floorplan-${p}.png`}/>
+                </section>
+            );
+        });
         return(
             <LocalWrapper>
                <Key/>
@@ -12,36 +22,7 @@ export default class Floorplan extends Component {
                     <img src="./projects/hostel/floorplan-cross_section.png"/>
                 </div>
                 <div>
-                    <section>
-                        <h4>
-                            Fourth Floor
-                        </h4>
-                        <img src="./projects/hostel/floorplan-4.png"/>
-                    </section>
-                    <section>
-                        <h4>
-                            Third Floor
-                        </h4>
-                        <img src="./projects/hostel/floorplan-3.png"/>
-                    </section>
-                    <section>
-                        <h4>
-                            Second Floor
-                        </h4>
-                        <img src="./projects/hostel/floorplan-2.png"/>
-                    </section>
-                    <section>
-                        <h4>
-                            First Floor
-                        </h4>
-                        <img src="./projects/hostel/floorplan-1.png"/>
-                    </section>
-                    <section>
-                        <h4>
-                            Basement
-                        </h4>
-                        <img src="./projects/hostel/floorplan-basement.png"/>
-                    </section>
+                  {mapPlans}
                 </div>
             </LocalWrapper>
         )

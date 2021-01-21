@@ -5,7 +5,7 @@ import HostelComponent      from './hostel/Hostel';
 
 export default class ShowHero extends Component {
     render(){
-    const { project } = this.props;
+    const { project, selectPlan } = this.props;
         return(<>
             <LocalWrapper>
                 <section>
@@ -26,7 +26,6 @@ export default class ShowHero extends Component {
                     <img src={project.images[0]}/>
                 </section>
             </LocalWrapper>
-                { project.subtext === 'Hostel' && <HostelComponent project={project}/> }
             </>
         )
     }

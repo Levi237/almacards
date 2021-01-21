@@ -48,7 +48,9 @@ export default class App extends Component {
         logoColor: "invert(0)",
         displayLogo: "inline-block;",
       }
-    }
+    },
+    plans: ['basement', 'first', 'second', 'third', 'fourth'],
+    plan: null
   }
   toggleMenu = () => {
     const hamburgerMenu = document.getElementById('menu');
@@ -63,13 +65,27 @@ export default class App extends Component {
       emailContact: e.currentTarget.value
     });
   };
+muteItem = (e) => {
+    e.preventDefault();
+    console.log("click", e.currentTarget.id);
+    this.setState({
+        plan: e.currentTarget.id
+    });
+}
+selectPlan = (e) => {
+  e.preventDefault();
+  console.log("click to App state", e.currentTarget.id, "where is the id");
+  this.setState({
+      plan: e.currentTarget.id
+  });
+}
   render(){
-    const { emailContact, pageStyle } = this.state
+    const { emailContact, pageStyle, plans, plan } = this.state
     return (
       <AppContainer>
         {/* <NavMenu toggleMenu={this.toggleMenu}/> */}
         <EmailSignup contactType={emailContact} toggleEmailSignup={this.toggleEmailSignup}/>
-        <ViewPlan />
+        {plan && <ViewPlan muteItem={this.muteItem} plan={plan} plans={plans}/>}
         <header className="header">
           <NavBar/>
         </header>
@@ -77,7 +93,7 @@ export default class App extends Component {
           <Switch>
             <Route path={routes.CONF} exact render={() => <EmailConfirmation/> }/>     
             <Route path={routes.INFO} exact render={() => <h1>About Stuff</h1> }/>
-            <Route path={routes.PORT} exact render={() => <Portfolio/> }/>
+            <Route path={routes.PORT} exact render={() => <Portfolio selectPlan={this.selectPlan} plans={plans}/> }/>
             <Route path={routes.ROOT} render={() => <HomePage/> }/>
           </Switch>
         </div>

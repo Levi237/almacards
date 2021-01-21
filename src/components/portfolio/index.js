@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled               from 'styled-components';
-import ShowHero             from './ShowHero'
+import HostelComponent             from './hostel/Hostel'
 export default class Portfolio extends Component {
     state = {
         portfolio: [{
@@ -63,72 +63,9 @@ export default class Portfolio extends Component {
 
     render(){
         const { portfolio } = this.state;
-        const mapPortfolio = portfolio.map((m,k)=>{
-            return(
-                <div id={m.id} key={k}>
-                    <div id="image"></div>
-                    <h2>
-                        {m.title}
-                    </h2>
-                    <section style={{backgroundColor: m.pallet[0], color: m.pallet[0]}}>{m.pallet[0]}</section>
-                    <section style={{backgroundColor: m.pallet[1], color: m.pallet[1]}}>{m.pallet[1]}</section>
-                    <section style={{backgroundColor: m.pallet[2], color: m.pallet[2]}}>{m.pallet[2]}</section>
-                    <section style={{backgroundColor: m.pallet[3], color: m.pallet[3]}}>{m.pallet[3]}</section>
-                    <section style={{backgroundColor: m.pallet[4], color: m.pallet[4]}}>{m.pallet[4]}</section>
-                </div>
-            )
-        })
+        const { selectPlan } = this.props;
         return(<>
-            {/* <LocalWrapper>
-                {mapPortfolio}
-            </LocalWrapper> */}
-                <ShowHero project={portfolio[0]}/>
+                <HostelComponent project={portfolio[0]} selectPlan={selectPlan}/>
         </>);
     };
 };
-
-const LocalWrapper = styled.div`
-    text-align: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 30vw 30vw;
-    grid-template-area:
-    ' one two three '
-    ' four five six';
-    div#1 {
-        grid-area: one;
-    }
-    div#2 {
-        grid-area: two;
-    }
-    div#3 {
-        grid-area: three;
-    }
-    div#4 {
-        grid-area: four;
-    }
-    div#5 {
-        grid-area: five;
-    }
-    div#6 {
-        grid-area: six;
-    }
-    div#image{
-        height: 20vw;
-        width: 20vw;
-        margin: 0 auto;
-        background-color: pink;
-    }
-    > div {
-        h2 {
-            font-size: 20px;
-        }
-        section {
-            display: inline-block;
-            width: 15%;
-            font-size: 3px;
-            text-align: center;
-            color: rgba(122,122,122,.5);
-        }
-    }
-`;
