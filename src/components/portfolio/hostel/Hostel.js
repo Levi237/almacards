@@ -9,12 +9,12 @@ import ShowHero from '../ShowHero';
     state = {
     }
     render(){
-        const { project, selectPlan, plans } = this.props;
+        const { project, selectPlan, hostelPlans, hostelPlan } = this.props;
         return(
             <>
                 <ShowHero project={project}/>
                 <Painting project={project}/>
-                <Floorplan project={project} plans={plans} selectPlan={selectPlan}/>
+                <Floorplan project={project} hostelPlans={hostelPlans} hostelPlan={hostelPlan} selectPlan={selectPlan}/>
                 <River project={project}/>
             </>
         )

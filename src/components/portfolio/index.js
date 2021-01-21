@@ -67,7 +67,7 @@ export default class Portfolio extends Component {
     }
     render(){
         const { portfolio, selected } = this.state;
-        const { plans, selectPlan } = this.props;
+        const { hostelPlan, hostelPlans, selectPlan } = this.props;
         const mapPortfolio = portfolio.map((m,k)=>{
             return(
                 <div id={k} key={k} onClick={(e) => this.selectPortfolio(e)}>
@@ -84,7 +84,7 @@ export default class Portfolio extends Component {
             )
         })
         return(<>
-            { (selected === "0") && <HostelComponent project={portfolio[selected]} selectPlan={selectPlan} plans={plans}/> }
+            { (selected === "0") && <HostelComponent project={portfolio[selected]} selectPlan={selectPlan} hostelPlans={hostelPlans} hostelPlan={hostelPlan}/> }
             <LocalWrapper>
                 {mapPortfolio}
             </LocalWrapper>
