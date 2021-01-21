@@ -61,7 +61,7 @@ export default class Portfolio extends Component {
     }
     render(){
         const { portfolio, selected } = this.state;
-        const { hostelPlan, hostelPlans, selectPlan } = this.props;
+        const { hostelPlans, selectPlan } = this.props;
         const mapPortfolio = portfolio.map((m,k)=>{
             return(
                 <div id={k} key={k} onClick={(e) => this.selectPortfolio(e)}>
