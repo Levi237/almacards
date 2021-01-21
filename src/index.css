@@ -91,3 +91,6 @@ button.selectedHighlighted {
 .toggle-display {
   display: inline-block;
 }
+.toggle-invert > img {
+  filter: invert(1);
+}

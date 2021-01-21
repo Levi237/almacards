@@ -3,6 +3,8 @@ import styled               from 'styled-components';
 
 import Key from './Key';
 import { breakStatement } from '@babel/types';
+
+import ViewNav from './VewNav';
 export default class ViewPlan extends Component {
     state = {
         plans: ['basement', 'first', 'second', 'third', 'fourth']
@@ -13,10 +15,11 @@ export default class ViewPlan extends Component {
         return(
             <LocalWrapper>
                <Key>{plans[3]}</Key>
-                <section><h1>TEST</h1>test</section>
+                <ViewNav><h1>TEST</h1>test</ViewNav>
                 <section>
                     <div>
-                        {mapPlans}
+                    <img className="toggle-hide toggle-display" src={`./projects/hostel/floorplan-${plans[3]}.png`}/>
+                        {/* {mapPlans} */}
                     </div>
                 </section>
             </LocalWrapper>
@@ -49,6 +52,7 @@ const LocalWrapper = styled.div`
             width: 100vw;
             overflow: hidden;
             > div {
+                margin-top: calc(10vw);
                 img {
                     width: 90vw;    
                 }
@@ -79,6 +83,7 @@ const LocalWrapper = styled.div`
                     height: 100vh;
                     width: 100vw;
                     position: relative;
+                    margin-top: 0;
                     img {
                         transform: rotate(90deg);
                         position: absolute;

@@ -78,7 +78,7 @@ const GlobalTable = styled.table`
         margin: 3vw;
     }
     @media screen and (max-width: ${mobileWidth}px) {
-        margin: calc(3vw * ${mobileMultiple});
+        margin: 0 calc(3vw * ${mobileMultiple});
     }
 `;
 const ColorTable = styled(GlobalTable)`
@@ -145,7 +145,7 @@ const ColorTable = styled(GlobalTable)`
     }
     @media screen and (max-width: ${mobileWidth}px) {
         font-size: calc(2vw * ${mobileMultiple});
-        margin: calc(1vw * ${mobileMultiple});
+        margin: 0 calc(1vw * ${mobileMultiple});
         tr {
             td {
                 &:first-of-type {
@@ -199,7 +199,7 @@ const NumberTable = styled(GlobalTable)`
     }
     @media screen and (max-width: ${mobileWidth}px) {
         font-size: calc(2vw * ${mobileMultiple});
-        margin: calc(1vw * ${mobileMultiple});
+        margin: 0 calc(1vw * ${mobileMultiple});
         div {
             height: calc(3vw * ${mobileMultiple});
             width: calc(3vw * ${mobileMultiple});
@@ -222,6 +222,7 @@ const LocalWrapper = styled.section`
     width: 100%;
     text-align: left;
     position: absolute;
+    margin: 1vw;
     @media screen and (max-width: ${tabletWidth}px) {
         position: relative;
     }
