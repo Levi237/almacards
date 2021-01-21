@@ -7,18 +7,26 @@ import { breakStatement } from '@babel/types';
 import ViewNav from './VewNav';
 export default class ViewPlan extends Component {
     state = {
-        plans: ['basement', 'first', 'second', 'third', 'fourth']
+        plans: ['basement', 'first', 'second', 'third', 'fourth'],
+        plan: ''
+    }
+    muteItem = (e) => {
+        e.preventDefault();
+        console.log("click", e.currentTarget.id);
+        this.setState({
+            plan: e.currentTarget.id
+        });
     }
     render(){
-        const { plans } = this.state;
-        const mapPlans = plans.map( p => { return <img className="toggle-hide toggle-display" src={`./projects/hostel/floorplan-${p}.png`}/> });
+        const { plans, plan } = this.state;
+        const mapPlans = plans.map( p => { return <img className="toggle-display" src={`./projects/hostel/floorplan-${p}.png`}/> });
         return(
             <LocalWrapper>
-               <Key>{plans[3]}</Key>
-                <ViewNav><h1>TEST</h1>test</ViewNav>
+               <Key>{plan}</Key>
+                <ViewNav muteItem={this.muteItem} plans={plans} plan={plan}/>
                 <section>
                     <div>
-                    <img className="toggle-hide toggle-display" src={`./projects/hostel/floorplan-${plans[3]}.png`}/>
+                    <img className="" src={`./projects/hostel/floorplan-${plan}.png`}/>
                         {/* {mapPlans} */}
                     </div>
                 </section>

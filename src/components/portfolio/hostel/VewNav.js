@@ -2,25 +2,14 @@ import React, { Component } from 'react';
 import styled               from 'styled-components';
 
 export default class ViewNav extends Component {
-    state = {
-        plans: ['basement', 'first', 'second', 'third', 'fourth']
-    }
-    muteItem(e){
-        let item = document.getElementsByClassName('floorplan-btn');
-        for (let i = 0; i < item.length; i++){
-            item[i].classList.add('toggle-invert');
-        }
-        e.preventDefault();
-        console.log("click", e.currentTarget);
-        e.currentTarget.classList.remove('toggle-invert');
-    }
     render(){
-        const mapPlans = this.state.plans.map((p) => { 
+        const { plan, plans, muteItem } = this.props
+        const mapPlans = plans.map((p) => { 
             return (
                 <Button 
                     id={p}
-                    className="floorplan-btn toggle-invert"
-                    onClick={(e) => {this.muteItem(e)}}
+                    className={plan !== p && `toggle-mute`}
+                    onClick={(e) => {muteItem(e)}}
                 >
                     <span>{p}</span>
                     <img className="" src={`./projects/hostel/floorplan-${p}.png`}/>

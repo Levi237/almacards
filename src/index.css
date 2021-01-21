@@ -91,6 +91,10 @@ button.selectedHighlighted {
 .toggle-display {
   display: inline-block;
 }
-.toggle-invert > img {
+.toggle-invert > img, .toggle-invert > span {
   filter: invert(1);
+}
+.toggle-mute > img, .toggle-mute > span {
+  filter: grayscale(1);
+  color: rgba(0,0,0,.4);
 }

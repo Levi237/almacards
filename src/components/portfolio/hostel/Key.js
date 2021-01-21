@@ -181,11 +181,11 @@ const NumberTable = styled(GlobalTable)`
         font-size: 2vw;
         margin: 1vw;
         div {
-            height: 3vw;
-            width: 3vw;
+            height: 2.25vw;
+            width: 2.25vw;
             border: .5vw solid #000;
             background-color: #fff;
-            line-height: 3vw;
+            line-height: 2.25vw;
             border-radius: 100%;
             text-align: center;
         }
@@ -201,9 +201,9 @@ const NumberTable = styled(GlobalTable)`
         font-size: calc(2vw * ${mobileMultiple});
         margin: 0 calc(1vw * ${mobileMultiple});
         div {
-            height: calc(3vw * ${mobileMultiple});
-            width: calc(3vw * ${mobileMultiple});
-            line-height: calc(3vw * ${mobileMultiple});
+            height: calc(2.25vw * ${mobileMultiple});
+            width: calc(2.25vw * ${mobileMultiple});
+            line-height: calc(2.25vw * ${mobileMultiple});
             border: calc(.5vw * ${mobileMultiple}) solid #000;
             border-radius: 100%;
             text-align: center;
