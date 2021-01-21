@@ -69,14 +69,14 @@ export default class App extends Component {
       e.preventDefault();
       console.log("click", e.currentTarget.id);
       this.setState({
-          plan: e.currentTarget.id
+          hostelPlan: e.currentTarget.id
       });
   };
   selectPlan = (e) => {
     e.preventDefault();
     console.log("click to App state", e.currentTarget.id, "where is the id");
     this.setState({
-        plan: e.currentTarget.id
+        hostelPlan: e.currentTarget.id
     });
   };
   render(){

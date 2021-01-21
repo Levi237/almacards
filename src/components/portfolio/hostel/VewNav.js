@@ -3,12 +3,13 @@ import styled               from 'styled-components';
 
 export default class ViewNav extends Component {
     render(){
-        const { plan, plans, muteItem } = this.props
-        const mapPlans = plans.map((p) => { 
+        const { hostelPlan, hostelPlans, muteItem } = this.props
+        const mapPlans = hostelPlans.map((p, k) => { 
             return (
                 <Button 
                     id={p}
-                    className={plan !== p && `toggle-mute`}
+                    key={k}
+                    className={hostelPlan !== p && `toggle-mute`}
                     onClick={(e) => {muteItem(e)}}
                 >
                     <span>{p}</span>

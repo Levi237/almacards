@@ -17,7 +17,7 @@ export default class Floorplan extends Component {
         });
         return(
             <LocalWrapper>
-               <Key/>
+               {/* <Key/> */}
                 <div>
                     <img src="./projects/hostel/floorplan-cross_section.png"/>
                 </div>
@@ -48,7 +48,11 @@ const LocalWrapper = styled.div`
                 position: relative;
             }
             img {
-                cursor: zoom-in;
+                filter: grayscale(1);
+                &:hover {
+                    filter: grayscale(0);
+                    cursor: zoom-in;
+                }
             }
             h4 {
                 position: absolute;
