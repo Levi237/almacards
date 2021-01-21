@@ -109,18 +109,18 @@ const LocalWrapper = styled.div`
     p {
         font-size: 1vw;
     }
-    @media screen and (max-width: 540px) {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: auto auto auto;
-        grid-template-areas: 
-        ' . one two three four . '
-        ' . painting painting painting painting . '
-        ' . five five five five . ';
-        p {
-            font-size: 2.75vw;
-        }
-        > div > img {
-            width: 100%;
-        }
-    }
+    // @media screen and (max-width: 540px) {
+    //     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    //     grid-template-rows: auto auto auto;
+    //     grid-template-areas: 
+    //     ' . one two three four . '
+    //     ' . painting painting painting painting . '
+    //     ' . five five five five . ';
+    //     p {
+    //         font-size: 2.75vw;
+    //     }
+    //     > div > img {
+    //         width: 100%;
+    //     }
+    // }
 `;
